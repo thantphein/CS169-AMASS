@@ -11,6 +11,4 @@ Scenario: Go to browse project page
         When I press "Browse Project"
         Then I am on the project page
         Then I should see all the project
-        When I click on "The Project"
-        Then I am on the "The Project" profile
 
