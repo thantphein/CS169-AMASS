@@ -30,6 +30,7 @@ group :assets do
   gem 'sass-rails', '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier'
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
@@ -40,3 +41,4 @@ gem 'haml'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+

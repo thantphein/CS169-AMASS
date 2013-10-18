@@ -1,0 +1,9 @@
+!!! 5
+%html
+  %head
+    %title AMASS Media
+    = stylesheet_link_tag 'bootstrap'
+    = csrf_meta_tags
+
+  %body
+    %h1.title AMASS Media
