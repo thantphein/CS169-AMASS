@@ -80,12 +80,48 @@ position:relative;
  text-decoration:none;
 }
 
+.banner a:visited{
+ color:#ffffff;
+  text-decoration:none;
+}
+
+.banner a:hover{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:link{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:active{
+ color:#ffffff;
+ text-decoration:none;
+}
 .banner {
-  background-image: url('../images/bannerpicture.jpg');
-  border-style:solid;
-  border-color:red;
-  height:200px;
+  height:300px;
   width: 100%;
+  background-image:url('/assets/bannerpicture.jpg');
+ 
+}
+
+#feat {
+  font-size: 40px;
+  color: #8aba00;
+  font-weight:bold;
+  margin-top:25px;
+}
+
+.thumbnail {
+  margin-top: 30px;
+  float: none;
+} 
+
+#Learn {
+  margin-top: 75px;
+  position: absolute;
+
 }
 
 

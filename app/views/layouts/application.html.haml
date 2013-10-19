@@ -7,7 +7,7 @@
     = csrf_meta_tags
 
   %body
-
+    
     %div.row#top-div
       %div.span6#AMASS AMASS MEDIA
       %div.span6#description connecting nonprofits with talented filmmakers.
@@ -27,6 +27,40 @@
               
     %div.row
       %div.banner
+        
+        %div.span6.offset2#Learn
+          %h3 Curious about AMASS Media?
+          %div.btn.btn-success= link_to 'Learn More', welcome_index_path, :method => :get
+      %div.span5.offset1
 
+    %div.row
+      %div.span5.offset1#feat Featured Projects
+    
+    %div.row
+      %div.offset1
+        %ul.thumbnails
+          %li.span3
+            %div.thumbnail
+              =image_tag "balloon.jpg"
+              %h2 Project Documentary
+              %p Habitat for Humanity, Oakland
+          %li.span3
+            %div.thumbnail
+              =image_tag "balloon.jpg"
+              %h2 Training Video
+              %p The Berkeley Free Clinic, Berkeley
+          %li.span3
+            %div.thumbnail
+              =image_tag "balloon.jpg"
+              %h2 Pet Spotlights
+              %p The Berkeley Animal Shelter, Berkeley
+          %li.span3
+            %div.thumbnail
+              =image_tag "balloon.jpg"
+              %h2 Educational Film
+              %p Action For Nature, San Francisco
+              
+            
+              
     #main
       = yield
