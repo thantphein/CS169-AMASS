@@ -13,8 +13,9 @@ Scenario: view sign up page
   Then I should be on the sign up page
   And I should see "As a Filmmaker"
   And I should see "As a Nonprofit"
-  And I should see "User Name"
+  And I should see "Username"
   And I should see "Password"
+  And I should see "Re-enter Password"
   And I should see "Name"
   And I should see "Email"
 
@@ -23,6 +24,7 @@ Scenario: sign up using sign up page
   And I check "As a Filmmaker"
   And I fill in "User Name" with "janedoe"
   And I fill in "Password" with "123456"
+  And I fill in "Re-enter Password" with "123456"
   And I fill in "Name" with "Jane Doe"
   And I fill in "Email" with "jane@doe.com"
   When I press "Sign Up"
@@ -31,10 +33,19 @@ Scenario: sign up using sign up page
 Scenario: sign up failure
   Given I am on the sign up page
   And I do not fill in "User Name"
+  Or I do not fill in "Re-enter Password"
   Or I do not fill in "Password"
   Or I do not fill in "Name"
   Or I do not fill in "Email"
   When I press "Sign Up"
   Then I should see "Signing Up Failed"
 
-
+Scenario: password is not the same
+  Given I am on the sign up page
+  And I fill in "User Name" with "janedoe"
+  And I fill in "Password" with "123456"
+  And I fill in "Re-enter Password" with "123457"
+  And I fill in "Name" with "Jane Doe"
+  And I fill in "Email" with "jane@doe.com"
+  When I press "Sign Up"
+  Then I should see "Signing Up Failed"
