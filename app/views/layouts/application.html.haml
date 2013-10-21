@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %title AMASS Media
+    = stylesheet_link_tag 'bootstrap'
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    
+    %div.row#top-div
+      %div.span6#AMASS AMASS MEDIA
+      %div.span6#description connecting nonprofits with talented filmmakers.
+        
+      
+    .navbar.navbar-inverse
+      .navbar-inner
+        .container
+          .nav-collapse
+            %ul.nav.pull-left
+              %li= link_to 'How It Works', welcome_index_path
+              %li= link_to 'Browse Projects', welcome_index_path
+              %li= link_to 'Browse Filmmakers', welcome_index_path
+            %div.pull-right#mybtngroup
+              %div.btn.btn-success#login= link_to 'Login', welcome_index_path,:method =>:get
+              %div.btn.btn-success#login= link_to 'Sign Up', welcome_index_path, :method =>:get
+              
+    
+            
+              
+    #main
+      = yield

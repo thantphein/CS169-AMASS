@@ -11,3 +11,117 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background-color:#f7f7f9;
+}
+
+#AMASS {
+  font-size: 400%;
+  padding-top:25px;
+  padding-bottom:25px;
+  font-weight:bold;
+  text-align:right;
+  color:#8aba00;
+
+}
+
+#top-div {
+position:relative;
+}
+
+
+#description{
+  position:absolute;
+  bottom:14px;
+  left: 470px;
+  font-size:20px;
+  color:#8aba00;
+}
+
+.button_to {
+  margin-top: 10px;
+}
+
+
+
+#login {
+  position:relative;
+  display:inline-block;
+  margin-top:18px;
+
+}
+
+.navbar li {
+  padding: 10px;
+  padding-left:30px;
+  font-size:25px;
+  margin-top:5px;
+}
+
+
+.navbar a:visited{
+ color:#ffffff;
+  text-decoration:none;
+}
+
+.navbar a:hover{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.navbar a:link{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.navbar a:active{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:visited{
+ color:#ffffff;
+  text-decoration:none;
+}
+
+.banner a:hover{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:link{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:active{
+ color:#ffffff;
+ text-decoration:none;
+}
+.banner {
+  height:300px;
+  width: 100%;
+  background-image:url('/assets/bannerpicture.jpg');
+ 
+}
+
+#feat {
+  font-size: 40px;
+  color: #8aba00;
+  font-weight:bold;
+  margin-top:25px;
+}
+
+.thumbnail {
+  margin-top: 30px;
+  float: none;
+} 
+
+#Learn {
+  margin-top: 75px;
+  position: absolute;
+
+}
+
+
