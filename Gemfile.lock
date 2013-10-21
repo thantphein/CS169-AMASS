@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/heroku/rails3_serve_static_assets.git
+  revision: 84910ceb4ca2851d650e66d3b22f5008acf253f8
+  specs:
+    rails3_serve_static_assets (0.0.1)
+
+GIT
+  remote: git://github.com/heroku/rails_log_stdout.git
+  revision: 01b5bcc572e3baed1618f4068920dd83bd491fb2
+  specs:
+    rails_log_stdout (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -90,6 +102,7 @@ GEM
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    pg (0.17.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -177,7 +190,10 @@ DEPENDENCIES
   haml
   jquery-rails
   launchy
+  pg
   rails (= 3.2.14)
+  rails3_serve_static_assets!
+  rails_log_stdout!
   rspec-rails
   ruby-debug19
   sass-rails (~> 3.2.6)
