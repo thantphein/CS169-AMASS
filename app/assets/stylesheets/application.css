@@ -11,3 +11,123 @@
  *= require_self
  *= require_tree .
  */
+*=require twitter/bootstrap
+
+body {
+  background-color:#f7f7f9;
+}
+#AMASS {
+  font-size: 400%;
+  font-weight:bold;
+  color:#8aba00;
+  padding-left:7%;
+  padding-bottom:0;
+}
+
+
+
+.button_to {
+  margin-top: 10px;
+}
+
+#description{
+  text-align:left;
+  padding-top:2.3%;
+  color:#8aba00;
+  font-size: 170%;
+
+}
+
+#top-div {
+position:relative;
+}
+
+#navbar-items {
+  margin-left:5%
+}
+
+#login {
+  position:relative;
+  display:inline-block;
+  margin-top:7%;
+
+}
+
+#login-div {
+  margin-right:1%;
+}
+
+.navbar li {
+  font-size:150%;
+}
+
+
+.navbar a:visited{
+ color:#ffffff;
+  text-decoration:none;
+}
+
+.navbar a:hover{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.navbar a:link{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.navbar a:active{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:visited{
+ color:#ffffff;
+  text-decoration:none;
+}
+
+.banner a:hover{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:link{
+ color:#ffffff;
+ text-decoration:none;
+}
+
+.banner a:active{
+ color:#ffffff;
+ text-decoration:none;
+}
+.banner {
+  height:300px;
+  width: 100%;
+  background-image:url('/assets/bannerpicture.jpg');
+ 
+}
+
+#feat {
+  padding-left:7%;
+  color: #8aba00;
+  font-weight:bold;
+  font-size:300%;
+  padding-top:1%;
+  padding-bottom:1%;
+}
+
+#project-div {
+  padding-left:3%;
+  padding-right:3%;
+  margin-bottom:5%;
+} 
+
+
+#Learn {
+  margin-top: 75px;
+  position: absolute;
+
+}
+
+
