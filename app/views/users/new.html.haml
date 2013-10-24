@@ -1,0 +1,28 @@
+%h1= t(:register)
+
+= form_for @user do |f|
+  - if @user.errors.any?
+    .error-messages
+      %ul
+        - for message in @user.errors.full_messages
+          %li= message
+  %div
+    = f.label :name
+    = f.text_field :name
+  %div
+    = f.label :username
+    = f.text_field :username
+  %div
+    = f.label :email
+    = f.email_field :email
+  %div
+    = f.label :password
+    = f.password_field :password
+  %div
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  %div
+    = f.label :are_you_a_filmmaker_or_a_nonprofit?
+    = f.select :usertype, options_for_select([["Select One", ""], "Filmmaker", "Nonprofit"])
+  %div
+    = f.submit 
