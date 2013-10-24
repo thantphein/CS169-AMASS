@@ -7,6 +7,7 @@ gem 'rails', '3.2.14'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
+  gem 'bcrypt-ruby', '~> 3.0.0'
   gem 'sqlite3'
   gem 'ruby-debug19'
   gem 'database_cleaner'
