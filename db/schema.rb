@@ -13,6 +13,19 @@
 
 ActiveRecord::Schema.define(:version => 20131024012120) do
 
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "organization"
+    t.text     "blurb"
+    t.text     "nonprofit_mission"
+    t.text     "description"
+    t.datetime "deadline"
+    t.string   "status"
+    t.integer  "budget"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "username"
