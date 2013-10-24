@@ -8,7 +8,7 @@
           %li= message
   %div.form-group
     = label :user, :name, 'Name'
-  %div.form-control
+  %input.form-control {:type=>"text", :required =>"true", :id => }
     = text_field :user, 'name'
   %div
     = label :user, :username, 'Username'
