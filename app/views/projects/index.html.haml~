@@ -16,7 +16,7 @@
 
   - @projects.each do |project|
     %tr
-      %td= link_to "#{project.name}", project_path(project.id)
+      %td= link_to "#{project.name}", project_path
       %td= project.organization
       %td= project.blurb
       %td= project.nonprofit_mission
