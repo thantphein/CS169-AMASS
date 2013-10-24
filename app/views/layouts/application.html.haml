@@ -9,24 +9,22 @@
   %body
     
     %div.row#top-div
-      %div.span6#AMASS AMASS MEDIA
-      %div.span6#description connecting nonprofits with talented filmmakers.
+      %div.col-md-5#AMASS AMASS MEDIA
+      %div{:class => "col-md-6", :id => "description"}  connecting nonprofits with talented filmmakers.
         
       
-    .navbar.navbar-inverse
-      .navbar-inner
-        .container
-          .nav-collapse
-            %ul.nav.pull-left
-              %li= link_to 'How It Works', welcome_index_path
-              %li= link_to 'Browse Projects', welcome_index_path
-              %li= link_to 'Browse Filmmakers', welcome_index_path
-            %div.pull-right#mybtngroup
-              %div.btn.btn-success#login= link_to 'Login', welcome_index_path,:method =>:get
-              %div.btn.btn-success#login= link_to 'Sign Up', welcome_index_path, :method =>:get
-              
-    
-            
+    %nav.navbar.navbar-inverse
+
+      .navbar-header#navbar-items
+        %ul.nav.navbar-nav
+          %li= link_to 'How It Works', welcome_index_path
+          %li= link_to 'Browse Projects', welcome_index_path
+          %li= link_to 'Browse Filmmakers', welcome_index_path
+      .navbar-header.pull-right#login-div
+        %ul.nav.navbar-nav
+          %div.btn.btn-success#login= link_to 'Login', welcome_index_path,:method =>:get
+          %div.btn.btn-success#login= link_to 'Sign Up', welcome_index_path, :method =>:get
+         
               
     #main
       = yield

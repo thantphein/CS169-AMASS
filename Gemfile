@@ -30,7 +30,7 @@ group :assets do
   gem 'sass-rails', '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier'
-  gem 'bootstrap-sass'
+  gem 'anjlab-bootstrap-rails', :require=> 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 end
 
 gem 'jquery-rails'
