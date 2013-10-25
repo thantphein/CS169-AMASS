@@ -2,7 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require "bootstrap-sass"
-require "bootstrap"
 require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
