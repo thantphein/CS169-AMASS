@@ -1,11 +1,16 @@
 CS169Amass::Application.routes.draw do
   root :to => 'welcome#index'
+<<<<<<< .merge_file_ongaYv
   match 'signin' => 'sessions#new'
   match 'signup' => 'users#new'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
 
+=======
+  match 'welcome' => 'welcome#index'
+  get "welcome/index"
+>>>>>>> .merge_file_hBWC9w
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
