@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       #Should sign in and redirect to home page
     else
       session[:fail] = @user
-      redirect_to signup_path(:fail => true)
+      redirect_to new_user_path(:fail => true)
     end
   end
 

@@ -17,13 +17,13 @@
 
       .navbar-header#navbar-items
         %ul.nav.navbar-nav
-          %li= link_to 'How It Works', welcome_index_path
-          %li= link_to 'Browse Projects', welcome_index_path
-          %li= link_to 'Browse Filmmakers', welcome_index_path
+          %li= link_to 'How It Works', root_path
+          %li= link_to 'Browse Projects', root_path
+          %li= link_to 'Browse Filmmakers', root_path
       .navbar-header.pull-right#login-div
         %ul.nav.navbar-nav
-          %div.btn.btn-success#login= link_to 'Login', welcome_index_path,:method =>:get
-          %div.btn.btn-success#login= link_to 'Sign Up', new_user_path, :method =>:get
+          %div.btn.btn-success#login= link_to 'Login', signin_path,:method =>:get
+          %div.btn.btn-success#login= link_to 'Sign Up', signup_path, :method =>:get
          
               
     #main

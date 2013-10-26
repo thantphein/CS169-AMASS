@@ -1,0 +1,13 @@
+%h1.col-lg-offset-2 Sign in
+.row
+  .col-lg-offset-2
+    = form_for(:session, url: sessions_path) do |f|
+      = f.label :username
+      = f.text_field :username
+      = f.label :password
+      = f.password_field :password
+      = f.submit "Sign in", class: "btn btn-large btn-primary"
+    %p
+      New user? #{link_to "Sign up now!", signup_path}
+    - if flash[:error]
+      #error.message= flash[:error]
