@@ -16,14 +16,6 @@
 body {
   background-color:#f7f7f9;
 }
-#AMASS {
-  font-size: 400%;
-  font-weight:bold;
-  color:#8aba00;
-  padding-left:7%;
-  padding-bottom:0;
-}
-
 
 
 .button_to {
@@ -36,10 +28,6 @@ body {
   color:#8aba00;
   font-size: 170%;
 
-}
-
-#top-div {
-position:relative;
 }
 
 #navbar-items {
@@ -55,6 +43,9 @@ position:relative;
 
 #login-div {
   margin-right:1%;
+}
+.navbar {
+  margin-bottom: 0 !important;
 }
 
 .navbar li {
@@ -102,6 +93,7 @@ position:relative;
  text-decoration:none;
 }
 .banner {
+  padding-top: 0;
   height:300px;
   width: 100%;
   background-image:url('/assets/bannerpicture.jpg');
