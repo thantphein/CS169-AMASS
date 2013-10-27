@@ -2,7 +2,7 @@ CS169Amass::Application.routes.draw do
   root :to => 'welcome#index'
   match 'signin' => 'sessions#new'
   match 'signup' => 'users#new'
-
+  match 'signout' => 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
 
