@@ -7,9 +7,9 @@ Feature: sign in to AMASS account for registered filmmakers
 Background: filmmakers have signed up for AMASS accounts
 
 	Given the following filmmaker usernames exist:
-	| name	 | username	| password |      email       | usertype  |
-	| Jackie | abc123 	| rst456   | abc123@gmail.com | Filmmaker |
-	| Tom	 | xyz789	| ghi246   | xyz789@gmail.com | Filmmaker |
+	| name			 | username			| password |
+	| Jackie		 | abc123 			| rst456   |
+	| Tom			 | xyz789			| ghi246   |
 
 Scenario: view sign in form
 	Given I am on the home page

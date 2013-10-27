@@ -19,7 +19,7 @@ module NavigationHelpers
 	'/signup'
 
 	when /^the sign in page$/
-	'/signin' 
+	'/signin' or 'sessions#new'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
