@@ -1,34 +1,36 @@
-%h1 Sign Up
+%h1.col-lg-offset-2 Sign Up
+.col-lg-offset-2
+  = form_tag users_path(@user) do
+    - if @user.errors.any?
+      .error-messages
+        %ul
+          - for message in @user.errors.full_messages
+            %li= message
+    %div
+      = label :user, :name, 'Name'
+    %div
+      = text_field :user, 'name'
+    %div
+      = label :user, :username, 'Username'
+    %div
+      = text_field :user, 'username'
+    %div
+      = label :user, :email, 'Email'
+    %div
+      = email_field :user, 'email'
+    %div
+      = label :user, :password, 'Password'
+    %div
+      = password_field :user, 'password'
+    %div
+      = label :user, :password_confirmation, 'Password Confirmation'
+    %div
+      = password_field :user, 'password_confirmation'	
+    %div
+      = label :user, :usertype, 'Are You a Filmmaker or Nonprofit?'
+    %div
+      = select :user, 'usertype', ['Filmmaker','Nonprofit']
+    %p
+    %div
+      = submit_tag 'Sign Up', class: "btn btn-large btn-success"
 
-= form_tag users_path(@user) do
-  - if @user.errors.any?
-    .error-messages
-      %ul
-        - for message in @user.errors.full_messages
-          %li= message
-  %div
-    = label :user, :name, 'Name'
-  %div
-    = text_field :user, 'name'
-  %div
-    = label :user, :username, 'Username'
-  %div
-    = text_field :user, 'username'
-  %div
-    = label :user, :email, 'Email'
-  %div
-    = email_field :user, 'email'
-  %div
-    = label :user, :password, 'Password'
-  %div
-    = password_field :user, 'password'
-  %div
-    = label :user, :password_confirmation, 'Password Confirmation'
-  %div
-    = password_field :user, 'password_confirmation'	
-  %div
-    = label :user, :usertype, 'Are You a Filmmaker or Nonprofit?'
-  %div
-    = select :user, 'usertype', ['Filmmaker','Nonprofit']
-  %div
-    = submit_tag 'Sign Up'
