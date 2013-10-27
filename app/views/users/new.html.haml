@@ -13,18 +13,22 @@
                     - for message in @user.errors.full_messages
                       %li= message
               %fieldset
-                .form-group
-                  %input#user_name.form-control{name: "user[name]", placeholder: "Name", type: "text"}/
               .form-group
+                %label Name
+                %input#user_name.form-control{name: "user[name]", placeholder: "Name", type: "text"}/
+              .form-group
+                %label Username
                 %input#user_username.form-control{name: "user[username]", placeholder: "Username", type: "text"}/
               .form-group
+                %label Email
                 %input#user_email.form-control{name: "user[email]", placeholder: "Email", type: "text"}/   
               .form-group
+                %label Password
                 %input#user_password.form-control{name: "user[password]", placeholder: "Password", type: "password", value: ""}/
               .form-group
+                %label Password Confirmation
                 %input#user_password.form-control{name: "user[password_confirmation]", placeholder: "Password Confirmation", type: "password", value: ""}/
-              %p
-                Are you a Filmmaker or Nonprofit?
+              %label Are You a Filmmaker or Nonprofit?
               .checkbox
                 %label
                   %input{name: "user[usertype]", type: "checkbox", value: "filmmaker"}/

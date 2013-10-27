@@ -25,7 +25,7 @@ Scenario: sign up using sign up page
   And I fill in "Password Confirmation" with "123456"
   And I fill in "Name" with "Jane Doe"
   And I fill in "Email" with "jane@doe.com"
-  And I select "Nonprofit" from "Are You a Filmmaker or Nonprofit?"
+  And I check "Nonprofit"
   When I press "Sign Up"
   Then I should be on the home page
   Then I should see "Welcome Jane Doe"
