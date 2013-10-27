@@ -22,8 +22,26 @@
           %li= link_to 'Browse Filmmakers', root_path
       .navbar-header.pull-right#login-div
         %ul.nav.navbar-nav
-          %div.btn.btn-success#login= link_to 'Login', signin_path,:method =>:get
-          %div.btn.btn-success#login= link_to 'Sign Up', signup_path, :method =>:get
+          - if signed_in?
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                Welcome, #{current_user.name}
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"}
+                    Profile
+                %li
+                  %a{href: "#"}
+                    Settings
+                %li.divider
+                %li
+                  %a{href: "/signout"}
+                    Logout
+          - else
+            %div.btn.btn-success#login= link_to 'Login', signin_path,:method =>:get
+            %div.btn.btn-success#login= link_to 'Sign Up', signup_path, :method =>:get
+           
          
               
     #main
