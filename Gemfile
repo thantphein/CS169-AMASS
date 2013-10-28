@@ -9,7 +9,6 @@ gem 'rails', '3.2.14'
 group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'bcrypt-ruby', '~> 3.0.0'
-  gem 'sqlite3'
   gem 'ruby-debug19'
   gem 'database_cleaner'
   gem 'capybara'
