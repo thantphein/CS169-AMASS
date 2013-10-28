@@ -18,11 +18,11 @@ describe ProjectsController do
     it "routes to #edit" do
       get("/projects/1/edit").should route_to("projects#edit", :id => "1")
     end
-
+=end
     it "routes to #create" do
       post("/projects").should route_to("projects#create")
     end
-
+=begin
     it "routes to #update" do
       put("/projects/1").should route_to("projects#update", :id => "1")
     end

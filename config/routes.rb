@@ -4,7 +4,7 @@ CS169Amass::Application.routes.draw do
   match 'welcome' => 'welcome#index'
   get "welcome/index"
   
-  resources :projects, only: [:show,:index]
+  resources :projects #, only: [:show,:index,:create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
