@@ -8,8 +8,10 @@
           %form{"accept-charset" => "UTF-8", action: "/sessions", method: "post"}
             %fieldset
               .form-group
+                %label Username
                 %input#session_username.form-control{name: "session[username]", placeholder: "Username", type: "text"}/
               .form-group
+                %label Password
                 %input#session_password.form-control{name: "session[password]", placeholder: "Password", type: "password", value: ""}/
               .checkbox
                 %label

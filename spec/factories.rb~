@@ -5,7 +5,6 @@ FactoryGirl.define do
     name "Jane Doe"
     username "jane"
 	password "foobar"
-	usertype "Filmmaker"
     email "jane@doe.com"
   end
 end

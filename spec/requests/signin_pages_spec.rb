@@ -1,9 +1,8 @@
 require 'spec_helper'
 
-describe "Authentication" do
+describe "Signing in" do
   subject { page }
   before { 
-	@user = mock(User, :username => "ABC", :password => "XYZ", :name => "mock", :usertype => "Filmmaker", :email => "mock@gmail.com")
 	visit signin_path 
   }
   describe "signin page" do
@@ -48,11 +47,10 @@ describe "Authentication" do
 		it { should have_content('Invalid username/password combination') }
 	end
 
-	describe "enter existing username with wrong password" do 
+	describe "enter existing username with wrong password" do
+		let(:user) { FactoryGirl.create(:user) } 
 		before do
-			User.stub!(:find_by_username).with("ABC").and_return(@user)
-			@user.stub!(:authenticate).with("xyz123").and_return(false)
-			fill_in "Username", with: @user.username
+			fill_in "Username", with: user.username
 			fill_in "Password", with: "xyz123"
 			click_button "Login"
 		end
@@ -67,16 +65,18 @@ describe "Authentication" do
   end
 
   describe "with valid information" do
+	let(:user) { FactoryGirl.create(:user) }
 	before do 
-		User.stub!(:find_by_username).with("ABC").and_return(@user)
-		@user.stub!(:authenticate).with("XYZ").and_return(true)
-		fill_in "Username", with: @user.username
-		fill_in "Password", with: @user.password
+		fill_in "Username", with: user.username
+		fill_in "Password", with: user.password
 		click_button "Login"
 	end
-	
+	it { should_not have_content('Login') }
+	it { should_not have_content('Sign up') }
+	it { should have_content('Welcome, Jane Doe') }
 	it { should_not have_css('input#session_username') }
 	it { should_not have_css('input#session_password') }
+	
 	
   end
 end

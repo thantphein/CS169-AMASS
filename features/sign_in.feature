@@ -17,28 +17,28 @@ Scenario: view sign in form
 	Then I should be on the sign in page
 	And I should see "Username"
 	And I should see "Password" 
-	And I should see "Sign in" 
+	And I should see "Login" 
 
 Scenario: sign in with a username
 	Given I am on the sign in page
 	When I fill in "Username" with "abc123"
 	And I fill in "Password" with "rst456"
-	And I press "Sign in"
+	And I press "Login"
 	Then I should be on the home page
-	And I should see "Welcome, abc123"
+	And I should see "Welcome, Jackie"
 
 Scenario: sign in with wrong password
 	Given I am on the sign in page
 	When I fill in "Username" with "abc123"
 	And I fill in "Password" with "r456"
-	And I press "Sign in"
+	And I press "Login"
 	And I should see "Invalid username/password combination"
 
 Scenario: sign in with non-existing account
 	Given I am on the sign in page
 	When I fill in "Username" with "mno123"
 	When I fill in "Password" with "req456"
-	When I press "Sign in"
+	When I press "Login"
 	Then I should see "Invalid username/password combination"
 
 
