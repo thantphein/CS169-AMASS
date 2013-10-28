@@ -1,8 +1,8 @@
 require 'spec_helper'
-=begin
-describe "projects/edit" do
+
+describe "projects/new" do
   before(:each) do
-    @project = assign(:project, stub_model(Project,
+    assign(:project, stub_model(Project,
       :name => "MyString",
       :organization => "MyString",
       :blurb => "MyText",
@@ -10,14 +10,14 @@ describe "projects/edit" do
       :description => "MyText",
       :status => "MyString",
       :budget => 1
-    ))
+    ).as_new_record)
   end
 
-  it "renders the edit project form" do
+  it "renders new project form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form[action=?][method=?]", project_path(@project), "post" do
+    assert_select "form[action=?][method=?]", projects_path, "post" do
       assert_select "input#project_name[name=?]", "project[name]"
       assert_select "input#project_organization[name=?]", "project[organization]"
       assert_select "textarea#project_blurb[name=?]", "project[blurb]"
@@ -28,4 +28,3 @@ describe "projects/edit" do
     end
   end
 end
-=end

@@ -37,6 +37,18 @@ describe ProjectsController do
       assigns(:projects).should eq([project])
     end
   end
+
+  before(:each) do
+    @project = assign(:project, stub_model(Project,
+      :name => "MyString",
+      :organization => "MyString",
+      :blurb => "MyText",
+      :nonprofit_mission => "MyText",
+      :description => "MyText",
+      :status => "MyString",
+      :budget => 1
+    ))
+  end
 =end
   describe "GET show" do
     it "assigns the requested project as @project" do
