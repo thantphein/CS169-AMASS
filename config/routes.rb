@@ -1,18 +1,15 @@
 CS169Amass::Application.routes.draw do
   root :to => 'welcome#index'
-<<<<<<< HEAD
   match 'welcome' => 'welcome#index'
   get "welcome/index"
   
   resources :projects #, only: [:show,:index,:create]
-=======
   match 'signin' => 'sessions#new'
   match 'signup' => 'users#new'
   match 'signout' => 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
 
->>>>>>> origin/SignUp
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
