@@ -4,19 +4,16 @@
     %title AMASS Media
     = stylesheet_link_tag 'bootstrap'
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'browseprojects'
     = csrf_meta_tags
 
   %body
     
-    %div.row#top-div
-      %div.col-md-6.col-sm-7#AMASS AMASS MEDIA
-      %div{:class => "col-md-6", :id => "description"}  connecting nonprofits with talented filmmakers.
-        
-      
-    %nav.navbar.navbar-inverse
+    %nav.navbar.navbar-inverse#nav-div
 
       .navbar-header#navbar-items
         %ul.nav.navbar-nav
+          %li#logo= link_to 'AMASS Media', welcome_index_path
           %li= link_to 'How It Works', welcome_index_path
           %li= link_to 'Browse Projects', projects_path
           %li= link_to 'Browse Filmmakers', welcome_index_path

@@ -1,21 +1,17 @@
-%h1 Project Listings
+%h1#listing-title Project Listings
 
-%div
+%div#proj-container
 
   - @projects.each do |project|
-    %div.col-sm-4.col-md-3
+    %div.col-sm-4.col-md-3.col-lg-3#project
       %div.thumbnail
         =image_tag "balloon.jpg"
         %div.caption
-          %h2 #{project.category}
-      %td= link_to "#{project.name}", project_path(project.id)
-      %td= project.organization
-      %td= project.blurb
-      %td= project.nonprofit_mission
-      %td= project.description
-      %td= project.deadline
-      %td= project.status
-      %td= project.budget
+          %h2= project.category
+          %h3= project.organization
+          %h4= link_to  project.name, project_path(project.id)
+          %p= project.description
+          %p= "Budget: #{project.budget}"
 
 %br
 
