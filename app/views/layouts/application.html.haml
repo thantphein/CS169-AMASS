@@ -24,18 +24,18 @@
       .navbar-header.pull-right#login-div
         %ul.nav.navbar-nav.navbar-right{role: "navigation"}
           - if signed_in?
-            %li.dropdown
+            %li.dropdown.clearfix
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#", role: "button"}
                 Welcome, #{current_user.name}
                 %b.caret
               %ul.dropdown-menu{"aria-labelledby" => "dLabel", role: "menu"}
                 %li{role: "presentation"}
-                  %a{href: "#", role: "menuitem", tabindex: "-1"} Profile
+                  %a{href: "#", role: "menuitem", tabindex: "-1", style: "color: #666666;"} Profile
                 %li
-                  %a{href: "#", role: "menuitem", tabindex: "-1"}     Settings
+                  %a{href: "#", role: "menuitem", tabindex: "-1", style: "color: #666666;"}     Settings
                 %li.divider{role: "presentation"}
                 %li{role: "presentation"}
-                  %a{href: "/signout", role: "menuitem", tabindex: "-1"} Logout
+                  %a{href: "/signout", role: "menuitem", tabindex: "-1", style: "color: #666666;"} Logout
           - else
             %div.btn.btn-success#login= link_to 'Login', signin_path,:method =>:get
             %div.btn.btn-success#login= link_to 'Sign Up', signup_path, :method =>:get
