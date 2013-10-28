@@ -1,20 +1,21 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.14'
-
+gem 'rails_12factor'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
-  gem 'bcrypt-ruby', '~> 3.0.0'
+  gem 'bcrypt-ruby'
   gem 'ruby-debug19'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+
 end
 
 group :test do
