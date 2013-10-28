@@ -1,7 +1,16 @@
 CS169Amass::Application.routes.draw do
+<<<<<<< HEAD
   root :to => 'welcome#index'
   #match 'welcome' => 'welcome#index'
   #get "welcome/index"
+=======
+  #root :to => 'welcome#index'
+  match '' => 'welcome#index'
+  match 'welcome' => 'welcome#index'
+  get "welcome/index"
+  
+  resources :projects, only: [:show,:index,:create]
+>>>>>>> origin/BrowseProjectView
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,29 @@
+%h1 Listing projects
+
+%table
+  %tr
+    %th Name
+    %th Organization
+    %th Blurb
+    %th Nonprofit mission
+    %th Description
+    %th Deadline
+    %th Status
+    %th Budget
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= link_to "#{project.name}", project_path(project.id)
+      %td= project.organization
+      %td= project.blurb
+      %td= project.nonprofit_mission
+      %td= project.description
+      %td= project.deadline
+      %td= project.status
+      %td= project.budget
+
+%br
+
