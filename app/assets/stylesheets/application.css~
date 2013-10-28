@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *=require twitter/bootstrap
  *= require_tree .
  */
 
@@ -109,6 +108,9 @@ position:relative;
  
 }
 
+.dropdown-menu a{
+  color: #FFFFFF !important;
+}
 #feat {
   padding-left:7%;
   color: #8aba00;

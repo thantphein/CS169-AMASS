@@ -2,8 +2,9 @@
 %html
   %head
     %title AMASS Media
-    = stylesheet_link_tag 'bootstrap'
+    = javascript_include_tag 'application' 
     = stylesheet_link_tag 'application'
+   
     = csrf_meta_tags
 
   %body
@@ -21,23 +22,20 @@
           %li= link_to 'Browse Projects', projects_path
           %li= link_to 'Browse Filmmakers', root_path
       .navbar-header.pull-right#login-div
-        %ul.nav.navbar-nav
+        %ul.nav.navbar-nav.navbar-right{role: "navigation"}
           - if signed_in?
             %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#", role: "button"}
                 Welcome, #{current_user.name}
                 %b.caret
-              %ul.dropdown-menu
+              %ul.dropdown-menu{"aria-labelledby" => "dLabel", role: "menu"}
+                %li{role: "presentation"}
+                  %a{href: "#", role: "menuitem", tabindex: "-1"} Profile
                 %li
-                  %a{href: "#"}
-                    Profile
-                %li
-                  %a{href: "#"}
-                    Settings
-                %li.divider
-                %li
-                  %a{href: "/signout"}
-                    Logout
+                  %a{href: "#", role: "menuitem", tabindex: "-1"}     Settings
+                %li.divider{role: "presentation"}
+                %li{role: "presentation"}
+                  %a{href: "/signout", role: "menuitem", tabindex: "-1"} Logout
           - else
             %div.btn.btn-success#login= link_to 'Login', signin_path,:method =>:get
             %div.btn.btn-success#login= link_to 'Sign Up', signup_path, :method =>:get
