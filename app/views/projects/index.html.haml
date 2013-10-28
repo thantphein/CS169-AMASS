@@ -1,21 +1,13 @@
-%h1 Listing projects
+%h1 Project Listings
 
-%table
-  %tr
-    %th Name
-    %th Organization
-    %th Blurb
-    %th Nonprofit mission
-    %th Description
-    %th Deadline
-    %th Status
-    %th Budget
-    %th
-    %th
-    %th
+%div
 
   - @projects.each do |project|
-    %tr
+    %div.col-sm-4.col-md-3
+      %div.thumbnail
+        =image_tag "balloon.jpg"
+        %div.caption
+          %h2 #{project.category}
       %td= link_to "#{project.name}", project_path(project.id)
       %td= project.organization
       %td= project.blurb
