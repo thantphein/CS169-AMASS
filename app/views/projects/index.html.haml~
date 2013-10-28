@@ -1,6 +1,6 @@
 %h1 Listing projects
 
-%table
+%table{:border => "4", :width =>"90%", :align => "center"}
   %tr
     %th Name
     %th Organization
@@ -10,13 +10,10 @@
     %th Deadline
     %th Status
     %th Budget
-    %th
-    %th
-    %th
 
   - @projects.each do |project|
     %tr
-      %td= link_to "#{project.name}", project_path
+      %td= link_to "#{project.name}", project_path(project.id)
       %td= project.organization
       %td= project.blurb
       %td= project.nonprofit_mission
