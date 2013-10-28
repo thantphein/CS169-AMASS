@@ -18,7 +18,7 @@ Scenario: View a project
         When I follow "Project A"
         Then I should be on the "Project A" page
         Then I should see "Project A"
-        And I should see "Organization"
+                And I should see "Organization"
         And I should see "Blurb"
         And I should see "Nonprofit mission"
         And I should see "Description"
@@ -33,7 +33,7 @@ Scenario: View a project
         When I follow "Project C"
         Then I should be on the "Project C" page
         Then I should see "Project C"
-        And I should see "Organization"
+                And I should see "Organization"
         And I should see "Blurb"
         And I should see "Nonprofit mission"
         And I should see "Description"
