@@ -28,7 +28,10 @@ Scenario: sign up using sign up page
   And I check "Filmmaker"
   When I press "Sign Up"
   Then I should be on the home page
+<<<<<<< HEAD
   Then I should see "Welcome, Jane Doe"
+=======
+>>>>>>> 6b7d55d224bb530c9c000ad04a85c643c965b0b8
 
 Scenario: sign up failure
   Given I am on the sign up page
