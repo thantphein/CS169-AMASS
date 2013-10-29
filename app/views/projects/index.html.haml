@@ -4,7 +4,7 @@
 
   - @projects.each do |project|
     %div.col-sm-4.col-md-3.col-lg-3#project
-      %div.thumbnail=link_to project_path(project.id)
+      %div.thumbnail
         = image_tag "projects/#{project.id}/thumb.jpg"
         %div.caption
           %h2= project.category
