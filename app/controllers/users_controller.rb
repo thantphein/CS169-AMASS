@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def new
-    if params[:fail]
-	@user = session[:fail]
+    if session[:fail]
+	@user = session[:failUser]
     else
    	@user = User.new
     end
@@ -15,8 +15,9 @@ class UsersController < ApplicationController
       redirect_to root_path
       #Should sign in and redirect to home page
     else
-      session[:fail] = @user
-      redirect_to signup_path(:fail => true)
+      session[:failUser] = @user
+	  session[:fail] = true
+      redirect_to signup_path
     end
   end
 
