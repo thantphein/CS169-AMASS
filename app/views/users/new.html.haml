@@ -8,7 +8,7 @@
           %form#new_user.new_user{"accept-charset" => "UTF-8", action: "/users", method: "post"}
             = form_tag users_path(@user) do
               - if @user.errors.any?
-                .error-messages
+                .alert.alert-danger
                   %ul
                     - for message in @user.errors.full_messages
                       %li= message

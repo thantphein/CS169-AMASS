@@ -7,6 +7,9 @@
         .panel-body
           %form{"accept-charset" => "UTF-8", action: "/sessions", method: "post"}
             %fieldset
+              - if flash[:error]
+                .alert.alert-danger.text-center= flash[:error]
+              = yield
               .form-group
                 %label Username
                 %input#session_username.form-control{name: "session[username]", placeholder: "Username", type: "text"}/
@@ -20,6 +23,4 @@
               %input.btn.btn-lg.btn-success.btn-block{type: "submit", value: "Login"}/
               %p
                 New user? #{link_to "Sign up now!", signup_path}
-              - if flash[:error]
-                .alert.alert-danger.text-center= flash[:error]
-              = yield
+              
