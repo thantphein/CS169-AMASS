@@ -1,7 +1,7 @@
 module SessionsHelper
 	def sign_in(user, remember = 0)
 		remember_token = User.new_remember_token
-		if (remember == 1)
+		if (remember == "1")
 			cookies.permanent[:remember_token] = remember_token
 		else 
 			cookies[:remember_token] = remember_token
