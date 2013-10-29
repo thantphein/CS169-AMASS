@@ -13,16 +13,20 @@
                     - for message in @user.errors.full_messages
                       -if message == "Name can't be blank"
                         %li Name is required
-                      -if message == "Username can't be blank"
+                      -elsif message == "Username can't be blank"
                         %li Username is required
-                      -if message == "Email can't be blank"
+                      -elsif message == "Email can't be blank"
                         %li Email is required
-                      -if message == "Usertype can't be blank"
+                      -elsif message == "Usertype can't be blank"
                         %li Please indicate User Type
-                      -if message == "Password digest can't be blank"
+                      -elsif message == "Password can't be blank"
                         %li Password is required
-                      -if message == "Password doesn't match confirmation"
+                      -elsif message == "Email is invalid"
+                        %li= message
+                      -elsif message == "Password doesn't match confirmation"
                         %li Password doesn't match confirmation
+                   
+                    
                       
                       
               %fieldset

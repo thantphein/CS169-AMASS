@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def new
     if session[:fail]
 	@user = session[:failUser]
+    session[:fail] = false
     else
    	@user = User.new
     end
