@@ -9,6 +9,10 @@ class ProjectsController < ApplicationController
       format.json { render json: @projects }
     end
   end
+  
+  def thumbnail_exist?(id)
+	File.exist?("#{Rails.root}/app/assets/images/projects/#{id}/thumb.jpg")
+  end
 
   # GET /projects/1
   # GET /projects/1.json
