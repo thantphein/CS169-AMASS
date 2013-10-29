@@ -7,7 +7,7 @@
       %div.thumbnail
         - if thumbnail_exist?(project.id)
 		  = image_tag "projects/#{project.id}/thumb.jpg"
-		- else
+        - else
 		  = image_tag "balloon.jpg"
         %div.caption
           %h2= project.category
