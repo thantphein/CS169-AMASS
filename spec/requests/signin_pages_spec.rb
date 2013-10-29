@@ -71,12 +71,19 @@ describe "Signing in" do
 		fill_in "Password", with: user.password
 		click_button "Login"
 	end
-	it { should_not have_content('Login') }
-	it { should_not have_content('Sign up') }
+	it { should_not have_link('Login') }
+	it { should_not have_link('Sign up') }
 	it { should have_content('Welcome, Jane Doe') }
 	it { should_not have_css('input#session_username') }
 	it { should_not have_css('input#session_password') }
+	it { should have_link 'Profile' }
+	it { should have_link 'Settings' }
+	it { should have_link 'Logout' }
 	
-	
+	describe "followed by signout" do 
+		before { click_link "Logout" }
+		it { should have_link 'Login' }
+		it { should have_link 'Sign Up' }
+	end
   end
 end
