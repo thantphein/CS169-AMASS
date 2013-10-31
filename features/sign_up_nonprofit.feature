@@ -35,31 +35,32 @@ Scenario: sign up failure
   And I do not fill in "Username"
   When I press "Sign Up"
   Then I should be on the sign up page
-  Then I should see "Username can't be blank"
+  Then I should see "Username is required"
 
   Given I am on the sign up page
   And I do not fill in "Password"
   When I press "Sign Up"
   Then I should be on the sign up page
-  Then I should see "Password can't be blank"
+  Then I should see "Password is required"
 
   Given I am on the sign up page
   And I do not fill in "Password Confirmation"
+  And I fill in "Password" with "123456"
   When I press "Sign Up"
   Then I should be on the sign up page
-  Then I should see "Password can't be blank"
+  Then I should see "Password doesn't match confirmation"
 
   Given I am on the sign up page
   And I do not fill in "Name"
   When I press "Sign Up"
   Then I should be on the sign up page
-  Then I should see "Name can't be blank"
+  Then I should see "Name is required"
 
   Given I am on the sign up page
   And I do not fill in "Email"
   When I press "Sign Up"
   Then I should be on the sign up page
-  Then I should see "Email can't be blank"
+  Then I should see "Email is required"
 
 Scenario: password is not the same
   Given I am on the sign up page
@@ -71,5 +72,3 @@ Scenario: password is not the same
   When I press "Sign Up"
   Then I should be on the sign up page
   Then I should see "Password doesn't match confirmation"
-
-

@@ -19,14 +19,13 @@
                         %li Email is required
                       -elsif message == "Usertype can't be blank"
                         %li Please indicate User Type
-                      -elsif message == "Password can't be blank"
+                      -elsif message == "Password digest can't be blank"
                         %li Password is required
                       -elsif message == "Email is invalid"
                         %li= message
                       -elsif message == "Password doesn't match confirmation"
                         %li Password doesn't match confirmation
-                      -else 
-                        %li= message
+                     
                    
                     
                       
