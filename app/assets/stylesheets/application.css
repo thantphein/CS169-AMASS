@@ -16,34 +16,38 @@
 body {
   background-color:#f7f7f9;
 }
-#AMASS {
-  font-size: 400%;
-  font-weight:bold;
-  color:#8aba00;
-  padding-left:7%;
-  padding-bottom:0;
+
+#logo a {
+  font-size:250%;
+  font-weight: bold;
+  color: #f7f7f9;
 }
 
+.nav-items a
+{
+  color: #f7f7f9 !important;
+}
 
+#welcome-user{
+ color: #f7f7f9 !important;
+}
 
 .button_to {
   margin-top: 10px;
 }
 
-#description{
-  text-align:left;
-  padding-top:2.3%;
-  color:#8aba00;
-  font-size: 170%;
-
-}
-
-#top-div {
-position:relative;
-}
-
 #navbar-items {
   margin-left:5%
+}
+
+#nav-div {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom:0;
+}
+
+.drop-items {
+  color: #666666 !important;
 }
 
 #login {

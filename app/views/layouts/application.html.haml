@@ -4,38 +4,32 @@
     %title AMASS Media
     = javascript_include_tag 'application' 
     = stylesheet_link_tag 'application'
-   
     = csrf_meta_tags
 
   %body
-    
-    %div.row#top-div
-      %div.col-md-6.col-sm-7#AMASS AMASS MEDIA
-      %div{:class => "col-md-6", :id => "description"}  connecting nonprofits with talented filmmakers.
-        
-      
-    %nav.navbar.navbar-inverse
+    %nav.navbar.navbar-inverse#nav-div
 
       .navbar-header#navbar-items
         %ul.nav.navbar-nav
-          %li= link_to 'How It Works', root_path
-          %li= link_to 'Browse Projects', projects_path
-          %li= link_to 'Browse Filmmakers', root_path
+          %li#logo= link_to 'AMASS Media', welcome_index_path
+          %li.nav-items= link_to 'How It Works', root_path
+          %li.nav-items= link_to 'Browse Projects', projects_path
+          %li.nav-items= link_to 'Browse Filmmakers', root_path
       .navbar-header.pull-right#login-div
         %ul.nav.navbar-nav.navbar-right{role: "navigation"}
           - if signed_in?
             %li.dropdown.clearfix
-              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#", role: "button"}
+              %a.dropdown-toggle#welcome-user{"data-toggle" => "dropdown", href: "#", role: "button"}
                 Welcome, #{current_user.name}
                 %b.caret
               %ul.dropdown-menu{"aria-labelledby" => "dLabel", role: "menu"}
                 %li{role: "presentation"}
-                  %a{href: "#", role: "menuitem", tabindex: "-1", style: "color: #666666;"} Profile
+                  %a.drop-items{href: "#", role: "menuitem", tabindex: "-1"} Profile
                 %li
-                  %a{href: "#", role: "menuitem", tabindex: "-1", style: "color: #666666;"}     Settings
+                  %a.drop-items{href: "#", role: "menuitem", tabindex: "-1"}     Settings
                 %li.divider{role: "presentation"}
                 %li{role: "presentation"}
-                  %a{href: "/signout", role: "menuitem", tabindex: "-1", style: "color: #666666;"} Logout
+                  %a.drop-items{href: "/signout", role: "menuitem", tabindex: "-1"} Logout
           - else
             %div.btn.btn-success#login= link_to 'Login', signin_path,:method =>:get
             %div.btn.btn-success#login= link_to 'Sign Up', signup_path, :method =>:get
