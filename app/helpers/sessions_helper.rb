@@ -1,18 +1,27 @@
 module SessionsHelper
 	def sign_in(user, remember = 0)
-		remember_token = User.new_remember_token
-		if (remember == "1")
-			cookies.permanent[:remember_token] = remember_token
-		else 
-			cookies[:remember_token] = remember_token
+		if user.is_a?(User)
+			remember_token = User.new_remember_token
+			if (remember == "1")
+				cookies.permanent[:remember_token] = remember_token
+			else 
+				cookies[:remember_token] = remember_token
+			end
+		
+			user.update_attribute(:remember_token, User.encrypt(remember_token))
+			self.current_user = user
+		else
+			admin_dashboard_path
 		end
-		user.update_attribute(:remember_token, User.encrypt(remember_token))
-		self.current_user = user
 	end
 
 	def sign_out
-		self.current_user = nil
-		cookies.delete(:remember_token)
+		if self.current_user.is_a?(User)
+			self.current_user = nil
+			cookies.delete(:remember_token)
+		else
+			super
+		end
 	end
 
 	def signed_in?
