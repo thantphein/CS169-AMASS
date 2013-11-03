@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20131101033348) do
     t.integer  "budget"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "category"
+    t.string   "location"
   end
 
   create_table "users", :force => true do |t|
