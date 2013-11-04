@@ -2,11 +2,11 @@ Feature: sign in to AMASS account for registered filmmakers
 
 	As a registered filmmaker
 	So that I can access my profile or join new projects
-	I want to sign in to my account
+	I want to sign in/out to my account
 
 Background: filmmakers have signed up for AMASS accounts
 
-	Given the following filmmaker usernames exist:
+	Given the following filmmakers exist:
 	| name	 | username	| password |      email       | usertype  |
 	| Jackie | abc123 	| rst456   | abc123@gmail.com | Filmmaker |
 	| Tom	 | xyz789	| ghi246   | xyz789@gmail.com | Filmmaker |
@@ -20,26 +20,24 @@ Scenario: view sign in form
 	And I should see "Login" 
 
 Scenario: sign in with a username
-	Given I am on the sign in page
-	When I fill in "Username" with "abc123"
-	And I fill in "Password" with "rst456"
-	And I press "Login"
+	Given I am logged in as "abc123" with password "rst456"
 	Then I should be on the home page
 	And I should see "Welcome, Jackie"
 
 Scenario: sign in with wrong password
-	Given I am on the sign in page
-	When I fill in "Username" with "abc123"
-	And I fill in "Password" with "r456"
-	And I press "Login"
+	Given I am logged in as "abc123" with password "r456"
 	And I should see "Invalid username/password combination"
 
 Scenario: sign in with non-existing account
-	Given I am on the sign in page
-	When I fill in "Username" with "mno123"
-	When I fill in "Password" with "req456"
-	When I press "Login"
+	Given I am logged in as "mno123" with password "req456"
 	Then I should see "Invalid username/password combination"
 
-
+Scenario: sign out with existing account
+	Given I am logged in as "abc123" with password "rst456"
+	Then I should see "Welcome, Jackie"
+	When I follow "Logout"
+	Then I should be on the home page
+	And I should not see "Welcome, Jackie"
+	And I should see "Login"
+	And I should see "Sign Up"
 	
