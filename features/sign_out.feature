@@ -20,7 +20,6 @@ Feature: sign out
         
   Scenario: sign out with filmmaker account
         Given I am logged in as "abc123" with password "rst456"
-        Then I should see "Welcome, Jackie"
         When I follow "Logout"
         Then I should be on the home page
         And I should not see "Welcome, Jackie"
@@ -29,7 +28,6 @@ Feature: sign out
         
   Scenario: sign out with non-profit account
         Given I am logged in as "org1" with password "123456"
-        Then I should see "Welcome, Organization1"
         When I follow "Logout"
         Then I should be on the home page
         And I should not see "Welcome, Organization1"
