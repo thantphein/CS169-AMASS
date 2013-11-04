@@ -59,7 +59,7 @@ describe UsersController do
       it 'should stay on create page' do
         @attributes.delete(:name)
         post :create, :user => @attributes
-        response.should redirect_to('/signup?fail=true')
+        response.should redirect_to signup_path
       end 
     end
   end
