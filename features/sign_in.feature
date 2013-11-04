@@ -31,13 +31,3 @@ Scenario: sign in with wrong password
 Scenario: sign in with non-existing account
 	Given I am logged in as "mno123" with password "req456"
 	Then I should see "Invalid username/password combination"
-
-Scenario: sign out with existing account
-	Given I am logged in as "abc123" with password "rst456"
-	Then I should see "Welcome, Jackie"
-	When I follow "Logout"
-	Then I should be on the home page
-	And I should not see "Welcome, Jackie"
-	And I should see "Login"
-	And I should see "Sign Up"
-	
