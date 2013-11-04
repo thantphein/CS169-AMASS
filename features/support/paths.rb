@@ -25,6 +25,11 @@ module NavigationHelpers
 	when /^the sign in page$/
 	'/signin' 
 
+    when /^the admin page$/
+      '/admin/login'
+    when /^the admin logout page$/
+      '/admin/logout'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
