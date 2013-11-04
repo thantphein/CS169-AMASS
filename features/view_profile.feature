@@ -15,8 +15,9 @@ Feature: Profile page for filmmakers
 
     Scenario: Filmmakers can view their profiles 
         Given I am logged in as "abc123"
-        And I am on the profile page of "abc123"
-        Then I should see "Jackie"
+        And I follow "Profile"
+        Then I should be on the profile page of "abc123"
+        And I should see "Jackie"
         And I should see "Edit"
         And I should see "Filmmaker Summary"
         And I should see "About me"
