@@ -7,30 +7,10 @@
         .panel-body
           %form#new_user.new_user{"accept-charset" => "UTF-8", action: "/users", method: "post"}
             = form_tag users_path(@user) do
-              - if @user.errors.any?
-                .alert.alert-danger
-                  %ul
-                    - for message in @user.errors.full_messages
-                      -if message == "Name can't be blank"
-                        %li Name is required
-                      -elsif message == "Username can't be blank"
-                        %li Username is required
-                      -elsif message == "Email can't be blank"
-                        %li Email is required
-                      -elsif message == "Usertype can't be blank"
-                        %li Please indicate User Type
-                      -elsif message == "Password digest can't be blank"
-                        %li Password is required
-                      -elsif message == "Email is invalid"
-                        %li= message
-                      -elsif message == "Password doesn't match confirmation"
-                        %li Password doesn't match confirmation
-                      -else 
-                        %li= message
+              .alert.alert-danger.alert-dismissable
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+                = devise_error_messages!
                    
-                    
-                      
-                      
               %fieldset
               .form-group
                 %label Name
@@ -58,5 +38,6 @@
                   Nonprofit
 
               %input.btn.btn-lg.btn-success.btn-block{type: "submit", value: "Sign Up"}/
+              = render "devise/shared/links"
 
 

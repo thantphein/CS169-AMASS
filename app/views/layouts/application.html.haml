@@ -40,15 +40,15 @@
               
     #main
       - if flash[:notice]
-        .alert.alert-success
+        .alert.alert-success.alert-dismissable.text-center
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
           = flash[:notice]
-          %a.close{href: ""} ×
       - if flash[:error]
-        .alert.alert-danger
+        .alert.alert-danger.alert-dismissable.text-center
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
           = flash[:error]
-          %a.close{href: ""} ×
       - if flash[:alert]
-        .alert.alert-warning
+        .alert.alert-warning.alert-dismissable.text-center
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
           = flash[:alert]
-          %a.close{href: ""} ×
       = yield
