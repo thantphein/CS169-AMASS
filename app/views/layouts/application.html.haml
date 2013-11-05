@@ -39,4 +39,16 @@
          
               
     #main
+      - if flash[:notice]
+        .alert.alert-success
+          = flash[:notice]
+          %a.close{href: ""} ×
+      - if flash[:error]
+        .alert.alert-danger
+          = flash[:error]
+          %a.close{href: ""} ×
+      - if flash[:alert]
+        .alert.alert-warning
+          = flash[:alert]
+          %a.close{href: ""} ×
       = yield

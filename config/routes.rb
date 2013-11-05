@@ -1,7 +1,9 @@
 CS169Amass::Application.routes.draw do
-
-  devise_for :users
+  authenticated :user do
+	root :to => 'welcome#index'
+  end
   root :to => 'welcome#index'
+  devise_for :users
   resources :projects #, only: [:show,:index,:create]
   resources :users
 
