@@ -8,12 +8,12 @@
           = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
             %fieldset
               .form-group
-                = f.label :username
-                = f.text_field :username, :autofocus => true
+                %label Username
+                %input#user_name.form-control{name: "user[username]", placeholder: "Username", type: "text"}/
             %fieldset
               .form-group
-                = f.label :password
-                = f.password_field :password
+                %label Username
+                %input#user_name.form-control{name: "user[password]", placeholder: "Password", type: "password"}/
             %fieldset
               .form-group
             - if devise_mapping.rememberable?
