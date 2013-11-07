@@ -1,6 +1,32 @@
-%h1#listing-title Project Listings
+
+%h2#listing-title Project Listings
 
 %div#proj-container
+
+  
+  %h1{align: "left"}Category  
+  %h2{align: "left"}= link_to 'Community', projects_path(:filter=>'category', :by => 'Community')
+  %h2{align: "left"}= link_to 'Education', projects_path(:filter=>'category', :by =>'Education')
+  %h2{align: "left"}= link_to 'Housing', projects_path(:filter=>'category', :by => 'Housing')
+
+  %h1{align: "left"}Location
+  %h2{align: "left"}= link_to 'Alabama', projects_path(:filter=>'location', :by => 'Alabama')
+  %h2{align: "left"}= link_to 'California', projects_path(:filter=>'location', :by => 'California')
+  %h2{align: "left"}= link_to 'Delaware', projects_path(:filter=>'location', :by => 'Delaware')
+  %h2{align: "left"}= link_to 'Florida', projects_path(:filter=>'location', :by => 'Florida')
+
+  %h1{align: "left"}Budget
+  %h2{align: "left"}= link_to '1000', projects_path(:filter=>'budget', :by => '1000')
+  %h2{align: "left"}= link_to '2000', projects_path(:filter=>'budget', :by => '2000')
+  %h2{align: "left"}= link_to '3000', projects_path(:filter=>'budget', :by => '3000')
+  %h2{align: "left"}= link_to '4000', projects_path(:filter=>'budget', :by => '4000')
+  %h2{align: "left"}= link_to '5000', projects_path(:filter=>'budget', :by => '5000')
+
+  %h1{align: "left"}Deadline
+  %h2{align: "left"}= link_to '31-Dec-2014', projects_path(:filter=>'deadline', :by => '31-Dec-2014')
+  %h2{align: "left"}= link_to '28-Feb-2014', projects_path(:filter=>'deadline', :by => '28-Feb-2014')
+  %h2{align: "left"}= link_to '31-Jan-2014', projects_path(:filter=>'deadline', :by => '31-Jan-2014')
+
 
   - @projects.each do |project|
     %div.col-sm-4.col-md-3.col-lg-3#project

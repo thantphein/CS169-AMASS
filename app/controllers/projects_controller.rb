@@ -3,12 +3,27 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    
+    filter = params[:filter] 
+    by = params[:by] 
+    case filter
+    when 'category'
+      @projects = Project.select{|x| x.category.to_s == by}
+    when 'location'
+      @projects = Project.select{|x| x.location.to_s == by}
+    when 'budget'
+      @projects = Project.select{|x| x.budget.to_i >= by.to_i}
+    when 'deadline'
+      tempDate = Date.parse(by)
+      @projects = Project.select{|x| x.deadline >= tempDate}
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
     end
   end
+
 
   # GET /projects/1
   # GET /projects/1.json

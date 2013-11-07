@@ -4,6 +4,7 @@ CS169Amass::Application.routes.draw do
   get "welcome/index"
   
   resources :projects #, only: [:show,:index,:create]
+  
   match 'signin' => 'sessions#new'
   match 'signup' => 'users#new'
   match 'signout' => 'sessions#destroy'
