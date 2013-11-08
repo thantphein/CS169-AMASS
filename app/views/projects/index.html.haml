@@ -3,29 +3,28 @@
 
 #wrapper
   #sidebar-wrapper  
-    %h3{align: "left"}= link_to 'All', projects_path(:filter=>'all')
-    %h3{align: "left"}Category  
-    %h4{align: "left"}= link_to 'Community', projects_path(:filter=>'category', :by => 'Community')
-    %h4{align: "left"}= link_to 'Education', projects_path(:filter=>'category', :by =>'Education')
-    %h4{align: "left"}= link_to 'Housing', projects_path(:filter=>'category', :by => 'Housing')
+    %h3{align: "left"}= link_to 'All Projects', projects_path(:filter=>'all')
+    %h3{align: "left"}Specialties  
+    %h4{align: "left"}= link_to 'Community', projects_path(:filter=>'specialities', :by => 'Community')
+    %h4{align: "left"}= link_to 'Education', projects_path(:filter=>'specialities', :by =>'Education')
+    %h4{align: "left"}= link_to 'Housing', projects_path(:filter=>'specialities', :by => 'Housing')
 
-    %h3{align: "left"}Location
-    %h4{align: "left"}= link_to 'Alabama', projects_path(:filter=>'location', :by => 'Alabama')
-    %h4{align: "left"}= link_to 'California', projects_path(:filter=>'location', :by => 'California')
-    %h4{align: "left"}= link_to 'Delaware', projects_path(:filter=>'location', :by => 'Delaware')
-    %h4{align: "left"}= link_to 'Florida', projects_path(:filter=>'location', :by => 'Florida')
-
-    %h3{align: "left"}Budget
-    %h4{align: "left"}= link_to '1000', projects_path(:filter=>'budget', :by => '1000')
-    %h4{align: "left"}= link_to '2000', projects_path(:filter=>'budget', :by => '2000')
-    %h4{align: "left"}= link_to '3000', projects_path(:filter=>'budget', :by => '3000')
-    %h4{align: "left"}= link_to '4000', projects_path(:filter=>'budget', :by => '4000')
-    %h4{align: "left"}= link_to '5000', projects_path(:filter=>'budget', :by => '5000')
+    %h3{align: "left"}Region
+    %h4{align: "left"}= link_to 'Alameda', projects_path(:filter=>'region', :by => 'Alameda')
+    %h4{align: "left"}= link_to 'San Francisco', projects_path(:filter=>'region', :by => 'San Francisco')
+    %h4{align: "left"}= link_to 'San Mateo', projects_path(:filter=>'region', :by => 'San Mateo')
+    %h4{align: "left"}= link_to 'Santa Clara', projects_path(:filter=>'region', :by => 'Santa Clara')
 
     %h3{align: "left"}Deadline
     %h4{align: "left"}= link_to '31-Dec-2014', projects_path(:filter=>'deadline', :by => '31-Dec-2014')
     %h4{align: "left"}= link_to '28-Feb-2014', projects_path(:filter=>'deadline', :by => '28-Feb-2014')
     %h4{align: "left"}= link_to '31-Jan-2014', projects_path(:filter=>'deadline', :by => '31-Jan-2014')
+
+    %h3{align: "left"}Budget
+    %h4{align: "left"}= link_to '$$$', projects_path(:filter=>'budget', :by => '$$$')
+    %h4{align: "left"}= link_to '$$', projects_path(:filter=>'budget', :by => '$$')
+    %h4{align: "left"}= link_to '$', projects_path(:filter=>'budget', :by => '$')
+
 
   #page-content-wrapper
     - @projects.each do |project|
@@ -33,9 +32,9 @@
         %div.thumbnail
           %a{href: "#{project_path(project.id)}"}
             - if thumbnail_exist?(project.id)
-              %img{src:"assets/projects/#{project.id}/thumb.jpg", height:"256", width:"341"}
+              %img{src:"assets/projects/#{project.id}/thumb.jpg"}
             - else
-              %img{src:"assets/balloon.jpg"	}
+              %img{src:"assets/balloon.jpg"}
           %div.caption
             %h2= project.category
             %h3{align: "center"}= link_to project.name, project_path(project.id)

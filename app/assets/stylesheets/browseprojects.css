@@ -24,6 +24,15 @@
 
 #page-content-wrapper {
   width: 100%;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  display: block;
+  height: auto;
+  max-width: 96%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .sidebar-nav {
@@ -71,3 +80,5 @@
   color: #fff;
   background: none;
 }
+
+

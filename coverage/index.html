@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-07T17:38:31-08:00">2013-11-07T17:38:31-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-08T10:27:05-08:00">2013-11-08T10:27:05-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -633,7 +633,7 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">    when 'category'</code>
+          <code class="ruby">    when 'specialities'</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="13">
@@ -645,7 +645,7 @@
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    when 'location'</code>
+          <code class="ruby">    when 'region'</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="15">
@@ -663,7 +663,7 @@
         <li class="covered" data-hits="7" data-linenumber="17">
           <span class="hits">7</span>
           
-          <code class="ruby">      @projects = Project.select{|x| x.budget.to_i &gt;= by.to_i}</code>
+          <code class="ruby">      @projects = Project.select{|x| x.budget.to_i.to_s.length == by.length}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
