@@ -1,10 +1,15 @@
-Given /^the following (.*?) exist/ do |user_type, users_table|
-	users_table.hashes.each do |user|
-		if user_type == "filmmakers" then User.create!(user)
-        elsif user_type == "non-profits" then User.create!(user)
-		end
-	end
+Given /^the following filmmakers exist/ do |table|
+	table.hashes.each do |user|
+		User.create!(user)
+    end
 end
+
+Given /^the following non-profits exist/ do |table|
+	table.hashes.each do |user|
+		User.create!(user)
+    end
+end
+
 
 Given /^I am logged in as "(.*?)" with password "(.*?)"$/ do |user,pass|
 	visit new_user_session_path

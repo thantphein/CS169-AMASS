@@ -16,13 +16,13 @@ Feature: View a project
         Given I am on the home page
     
 Scenario: View a project
-        When I follow "Browse Project"
+        When I follow "Browse Projects"
         Then I should be on the projects page
         When I follow "Project A"
         Then I should be on the "Project A" page
         Then I should see "Project A"
         And I should see "Category"
-	And I should see "Location"
+		And I should see "Location"
         And I should see "Organization"
         And I should see "Blurb"
         And I should see "Nonprofit mission"
@@ -32,7 +32,7 @@ Scenario: View a project
         And I should see "Budget"
 
 Scenario: View a project
-        When I follow "Browse Project"
+        When I follow "Browse Projects"
         Then I should be on the projects page
         When I follow "Project F"
         Then I should be on the "Project F" page
