@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-07T12:44:50-08:00">2013-11-07T12:44:50-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-07T17:38:31-08:00">2013-11-07T17:38:31-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">64.21%</span></span>
+    (<span class="covered_percent"><span class="red">63.54%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.44
+         4.4
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>11</b> files in total.
-    <b>95</b> relevant lines. 
+    <b>96</b> relevant lines. 
     <span class="green"><b>61</b> lines covered</span> and
-    <span class="red"><b>34</b> lines missed </span>
+    <span class="red"><b>35</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#4f29fc11f9fa452cc38cb135e8b7eb24092c722c" class="src_link" title="app/controllers/projects_controller.rb">app/controllers/projects_controller.rb</a></td>
-        <td class="red strong">78.95 %</td>
-        <td>99</td>
-        <td>19</td>
+        <td class="red strong">75.0 %</td>
+        <td>101</td>
+        <td>20</td>
         <td>15</td>
-        <td>4</td>
-        <td>8.4</td>
+        <td>5</td>
+        <td>8.0</td>
       </tr>
       
       <tr>
@@ -169,20 +169,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">54.0%</span></span>
+    (<span class="covered_percent"><span class="red">52.94%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.18
+         2.1
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>5</b> files in total.
-    <b>50</b> relevant lines. 
+    <b>51</b> relevant lines. 
     <span class="green"><b>27</b> lines covered</span> and
-    <span class="red"><b>23</b> lines missed </span>
+    <span class="red"><b>24</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -210,12 +210,12 @@
       
       <tr>
         <td class="strong"><a href="#4f29fc11f9fa452cc38cb135e8b7eb24092c722c" class="src_link" title="app/controllers/projects_controller.rb">app/controllers/projects_controller.rb</a></td>
-        <td class="red strong">78.95 %</td>
-        <td>99</td>
-        <td>19</td>
+        <td class="red strong">75.0 %</td>
+        <td>101</td>
+        <td>20</td>
         <td>15</td>
-        <td>4</td>
-        <td>8.4</td>
+        <td>5</td>
+        <td>8.0</td>
       </tr>
       
       <tr>
@@ -553,11 +553,11 @@
         <div class="source_table" id="4f29fc11f9fa452cc38cb135e8b7eb24092c722c">
   <div class="header">
     <h3>app/controllers/projects_controller.rb</h3>
-    <h4><span class="red">78.95 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
+      <b>20</b> relevant lines. 
       <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -603,13 +603,13 @@
         <li class="covered" data-hits="17" data-linenumber="7">
           <span class="hits">17</span>
           
-          <code class="ruby">    filter = params[:filter] </code>
+          <code class="ruby">    filter = params[:filter]</code>
         </li>
       
         <li class="covered" data-hits="17" data-linenumber="8">
           <span class="hits">17</span>
           
-          <code class="ruby">    by = params[:by] </code>
+          <code class="ruby">    by = params[:by]</code>
         </li>
       
         <li class="covered" data-hits="17" data-linenumber="9">
@@ -621,538 +621,550 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    when 'category'</code>
+          <code class="ruby">    when 'all'</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="11">
-          <span class="hits">7</span>
+        <li class="missed" data-hits="0" data-linenumber="11">
           
-          <code class="ruby">      @projects = Project.select{|x| x.category.to_s == by}</code>
+          
+          <code class="ruby">      @projects = Project.all</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">    when 'location'</code>
+          <code class="ruby">    when 'category'</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="13">
           <span class="hits">7</span>
           
-          <code class="ruby">      @projects = Project.select{|x| x.location.to_s == by}</code>
+          <code class="ruby">      @projects = Project.select{|x| x.category.to_s.downcase == by.downcase}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    when 'budget'</code>
+          <code class="ruby">    when 'location'</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="15">
           <span class="hits">7</span>
           
-          <code class="ruby">      @projects = Project.select{|x| x.budget.to_i &gt;= by.to_i}</code>
+          <code class="ruby">      @projects = Project.select{|x| x.location.to_s.downcase == by.downcase}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
+          <code class="ruby">    when 'budget'</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="17">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      @projects = Project.select{|x| x.budget.to_i &gt;= by.to_i}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
           <code class="ruby">    when 'deadline'</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="17">
+        <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
           <code class="ruby">      tempDate = Date.parse(by)</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="18">
+        <li class="covered" data-hits="14" data-linenumber="20">
           <span class="hits">14</span>
           
           <code class="ruby">      @projects = Project.select{|x| x.deadline &gt;= tempDate}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="17" data-linenumber="21">
-          <span class="hits">17</span>
-          
-          <code class="ruby">    respond_to do |format|</code>
-        </li>
-      
-        <li class="covered" data-hits="17" data-linenumber="22">
-          <span class="hits">17</span>
-          
-          <code class="ruby">      format.html # index.html.erb</code>
         </li>
       
         <li class="covered" data-hits="17" data-linenumber="23">
           <span class="hits">17</span>
           
+          <code class="ruby">    respond_to do |format|</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="24">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      format.html # index.html.erb</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="25">
+          <span class="hits">17</span>
+          
           <code class="ruby">      format.json { render json: @projects }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">  # GET /projects/1</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  # GET /projects/1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
           <code class="ruby">  # GET /projects/1.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
           <code class="ruby">    @project = Project.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="33">
-          
-          
-          <code class="ruby">    respond_to do |format|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
-          
-          <code class="ruby">      format.html # show.html.erb</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="35">
           
           
+          <code class="ruby">    respond_to do |format|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">      format.html # show.html.erb</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
           <code class="ruby">      format.json { render json: @project }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">=begin</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">  # GET /projects/new</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">  # GET /projects/new.json</code>
+          <code class="ruby">=begin</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">  def new</code>
+          <code class="ruby">  # GET /projects/new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">    @project = Project.new</code>
+          <code class="ruby">  # GET /projects/new.json</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  def new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    @project = Project.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">      format.html # new.html.erb</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">      format.json { render json: @project }</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      format.html # new.html.erb</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      format.json { render json: @project }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">  # GET /projects/1/edit</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">  def edit</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">    @project = Project.find(params[:id])</code>
+          <code class="ruby">  # GET /projects/1/edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  def edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    @project = Project.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  # POST /projects</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">  # POST /projects.json</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">  def create</code>
+          <code class="ruby">  # POST /projects</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">    @project = Project.new(params[:project])</code>
+          <code class="ruby">  # POST /projects.json</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  def create</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    @project = Project.new(params[:project])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby">      if @project.save</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">        format.html { redirect_to @project, notice: 'Project was successfully created.' }</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">        format.json { render json: @project, status: :created, location: @project }</code>
+          <code class="ruby">      if @project.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">        format.html { redirect_to @project, notice: 'Project was successfully created.' }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">        format.html { render action: &quot;new&quot; }</code>
+          <code class="ruby">        format.json { render json: @project, status: :created, location: @project }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">        format.json { render json: @project.errors, status: :unprocessable_entity }</code>
+          <code class="ruby">      else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        format.html { render action: &quot;new&quot; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        format.json { render json: @project.errors, status: :unprocessable_entity }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">  # PUT /projects/1</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">  # PUT /projects/1.json</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">  def update</code>
+          <code class="ruby">  # PUT /projects/1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">    @project = Project.find(params[:id])</code>
+          <code class="ruby">  # PUT /projects/1.json</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  def update</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    @project = Project.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">      if @project.update_attributes(params[:project])</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">        format.html { redirect_to @project, notice: 'Project was successfully updated.' }</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">        format.json { head :no_content }</code>
+          <code class="ruby">      if @project.update_attributes(params[:project])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">        format.html { redirect_to @project, notice: 'Project was successfully updated.' }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">        format.html { render action: &quot;edit&quot; }</code>
+          <code class="ruby">        format.json { head :no_content }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">        format.json { render json: @project.errors, status: :unprocessable_entity }</code>
+          <code class="ruby">      else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        format.html { render action: &quot;edit&quot; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        format.json { render json: @project.errors, status: :unprocessable_entity }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby">  # DELETE /projects/1</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">  # DELETE /projects/1.json</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby">  def destroy</code>
+          <code class="ruby">  # DELETE /projects/1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">    @project = Project.find(params[:id])</code>
+          <code class="ruby">  # DELETE /projects/1.json</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">    @project.destroy</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    @project = Project.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    @project.destroy</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">      format.html { redirect_to projects_url }</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">      format.json { head :no_content }</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      format.html { redirect_to projects_url }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      format.json { head :no_content }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
           
           
-          <code class="ruby">=end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">=end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby">end</code>
