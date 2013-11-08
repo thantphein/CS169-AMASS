@@ -20,10 +20,10 @@ module NavigationHelpers
 	when /^the "(.*)" page?/
 	  project_path(Project.find_by_name($1))
     when /^the sign up page$/
-	'/signup'
+	'/users/signup'
 
 	when /^the sign in page$/
-	'/signin' 
+	'/users/login' 
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

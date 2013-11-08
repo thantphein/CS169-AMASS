@@ -3,7 +3,10 @@ CS169Amass::Application.routes.draw do
 	root :to => 'welcome#index'
   end
   root :to => 'welcome#index'
-  devise_for :users
+  devise_for :users, :path => "users", :path_names => {:sign_in => "login", :sign_out => "logout", :sign_up => "signup"}
+  devise_scope :user do 
+    post 'users/signup', :to => "devise/registrations#create" 
+  end
   resources :projects #, only: [:show,:index,:create]
   resources :users
 

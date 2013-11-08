@@ -21,44 +21,44 @@ Scenario: view sign up page
 Scenario: sign up using sign up page
   Given I am on the sign up page
   And I fill in "Username" with "janedoe"
-  And I fill in "Password" with "123456"
-  And I fill in "Password Confirmation" with "123456"
+  And I fill in "Password" with "12345678"
+  And I fill in "Password Confirmation" with "12345678"
   And I fill in "Name" with "Jane Doe"
   And I fill in "Email" with "jane@doe.com"
   And I check "Nonprofit"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the home page
   Then I should see "Welcome, Jane Doe"
 
 Scenario: sign up failure
   Given I am on the sign up page
   And I do not fill in "Username"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the sign up page
   Then I should see "Username is required"
 
   Given I am on the sign up page
   And I do not fill in "Password"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the sign up page
   Then I should see "Password is required"
 
   Given I am on the sign up page
   And I do not fill in "Password Confirmation"
   And I fill in "Password" with "123456"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the sign up page
   Then I should see "Password doesn't match confirmation"
 
   Given I am on the sign up page
   And I do not fill in "Name"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the sign up page
   Then I should see "Name is required"
 
   Given I am on the sign up page
   And I do not fill in "Email"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the sign up page
   Then I should see "Email is required"
 
@@ -69,6 +69,6 @@ Scenario: password is not the same
   And I fill in "Password Confirmation" with "123457"
   And I fill in "Name" with "Jane Doe"
   And I fill in "Email" with "jane@doe.com"
-  When I press "Sign Up"
+  When I press "Create an account"
   Then I should be on the sign up page
   Then I should see "Password doesn't match confirmation"
