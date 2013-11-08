@@ -27,11 +27,23 @@
 #image-div {
   margin-top: 3.5%;
   repeat:none;
-  height:200%;
-  width:200%;
   margin-bottom:0;
 }
+
 #ourimage {
-  border-style: solid;
-  border-color:red;
+  width:100%;
+  border-radius: 10px;
+}
+#info-block {
+  margin-top:3.5%;
+  background-color:#f7f7f9;
+  border-radius:10px;
+}
+
+#h3 {
+  margin-top:0;
+}
+
+#join {
+
 }

@@ -11,13 +11,26 @@
   %div.row
     %div.col-md-8#image-div
       =image_tag "lorem-ipsum.jpg", :id => "ourimage"
+    %div.row
+      %div.col-md-4#info-block
+        %h5
+          Category
+        %h3
+          = @project.category
+        %h5
+          Location
+        %h3
+          = @project.location
+        %h5
+          Status
+        %h3
+          = @project.status
+        %h5
+          Budget
+        %h3
+          = @project.budget
+        = button_to "Join This Project", project_path(@project.id), :id => "join", :class => "btn-primary"
  
-  %p
-    %b Category:
-    = @project.category
-  %p
-    %b Location:
-    = @project.location
   %p
     %b Blurb:
     = @project.blurb
@@ -30,12 +43,7 @@
   %p
     %b Deadline:
     = @project.deadline
-  %p
-    %b Status:
-    = @project.status
-  %p
-    %b Budget:
-    = @project.budget
+  
 
   \|
   = link_to 'Back', projects_path
