@@ -1,0 +1,37 @@
+#project-div {
+  background-color: white;
+  border-radius: 15px;
+}
+
+#name {
+  margin-bottom:0;
+  padding-top: 1%;
+  text-align: center;
+}
+
+#organization {
+  text-align: center;
+  margin-bottom: 1%;
+  margin-top:0.5%;
+}
+
+#organization a:link, #organization a:visited, #organization a:active {
+  color:black;
+  text-decoration:none;
+}
+
+#organization a:hover {
+  color:#4F9FD0;
+}
+
+#image-div {
+  margin-top: 3.5%;
+  repeat:none;
+  height:200%;
+  width:200%;
+  margin-bottom:0;
+}
+#ourimage {
+  border-style: solid;
+  border-color:red;
+}

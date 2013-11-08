@@ -1,35 +1,41 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1#name
   = @project.name
-%p
-  %b Category:
-  = @project.category
-%p
-  %b Location:
-  = @project.location
-%p
-  %b Organization:
-  = @project.organization
-%p
-  %b Blurb:
-  = @project.blurb
-%p
-  %b Nonprofit mission:
-  = @project.nonprofit_mission
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Deadline:
-  = @project.deadline
-%p
-  %b Status:
-  = @project.status
-%p
-  %b Budget:
-  = @project.budget
 
-\|
-= link_to 'Back', projects_path
+%h2#organization
+  = link_to @project.organization, project_path(@project.id)
+
+%div.col-md-8.col-md-offset-2#project-div
+
+  %div.row
+    %div.col-md-8#image-div
+      =image_tag "lorem-ipsum.jpg", :id => "ourimage"
+ 
+  %p
+    %b Category:
+    = @project.category
+  %p
+    %b Location:
+    = @project.location
+  %p
+    %b Blurb:
+    = @project.blurb
+  %p
+    %b Nonprofit mission:
+    = @project.nonprofit_mission
+  %p
+    %b Description:
+    = @project.description 
+  %p
+    %b Deadline:
+    = @project.deadline
+  %p
+    %b Status:
+    = @project.status
+  %p
+    %b Budget:
+    = @project.budget
+
+  \|
+  = link_to 'Back', projects_path

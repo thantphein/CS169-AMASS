@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 =begin
+describe "View a Project" do
+  subject {page}
+  before do
+    let(:project) { FactoryGirl.create(:project) }
+    visit project_path(project.id)
+=end
+
+=begin
 describe Project do
   before do
     @proj1 = mock(Project, :name=>"A",:organization=>"A Org", :blurb=>"A blurb", :nonprofit_mission=>"A Mission", :description=>"A Description",:deadline=>"01-01-2014", :status=>"open", :budget=>"50")
