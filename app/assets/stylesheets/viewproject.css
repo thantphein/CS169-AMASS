@@ -28,6 +28,8 @@
 #image-div {
   repeat:none;
   margin-bottom:0;
+  margin-left:-1%;
+  margin-right:1%;
 
 }
 
@@ -36,7 +38,7 @@
   border-radius: 10px;
 }
 .info-block {
-  background-color:#f7f7f9;
+  background-color:#eff7ff;
   border-radius:10px;
   padding-bottom: 3%;
   padding-top: 1.5%;
@@ -48,8 +50,8 @@
 }
 
 .info-title{
-margin-bottom:0;
-margin-left:0;
+  margin-bottom:0;
+  margin-left:0;
 }
 
 #join {
@@ -61,8 +63,23 @@ margin-left:0;
 #pic-n-info {
   padding-top:3.5%;
   margin-bottom:3%;
+  padding-left:0;
 }
 
 #top-block {
   margin-bottom:2%;
+}
+
+#bottom-block {
+  margin-top:1%;
+  width:64.5%;
+}
+
+#blurb {
+  margin-bottom:5%;
+}
+
+#back-button {
+  margin-bottom: 3.5%;
+  margin-left:-1.5%;
 }
