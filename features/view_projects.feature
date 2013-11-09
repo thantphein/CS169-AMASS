@@ -14,35 +14,37 @@ Feature: View a project
         | Project E   | education	| Florida	| org E        | blurb E           | goals for E              | stuffs for E               | 06-Nov-2013            | pending          | 1000      |
         | Project F   | community	| California	| org F        | blurb F             | goals for F               | stuffs for F              | 06-Nov-2013            | pending       | 1000      |
         Given I am on the home page
-    
-Scenario: View a project
         When I follow "Browse Projects"
         Then I should be on the projects page
+    
+Scenario: View a project's titles
         When I follow "Project A"
         Then I should be on the "Project A" page
         Then I should see "Project A"
         And I should see "Category"
-		And I should see "Location"
-        And I should see "Organization"
-        And I should see "Blurb"
-        And I should see "Nonprofit mission"
+        And I should see "Location"
         And I should see "Description"
         And I should see "Deadline"
         And I should see "Status"
         And I should see "Budget"
 
-Scenario: View a project
-        When I follow "Browse Projects"
-        Then I should be on the projects page
-        When I follow "Project F"
-        Then I should be on the "Project F" page
-        Then I should see "Project F"
-        And I should see "Category"
-	And I should see "Location"
-        And I should see "Organization"
-        And I should see "Blurb"
-        And I should see "Nonprofit mission"
-        And I should see "Description"
-        And I should see "Deadline"
-        And I should see "Status"
-        And I should see "Budget"
+Scenario: View a project's content
+       When I follow "Project F"
+       Then I should be on the "Project F" page
+       And I should see "Project F"
+       And I should see "org F"
+       And I should see "community"
+       And I should see "blurb F"
+       And I should see "California"
+       And I should see "pending"
+       And I should see "1000"
+       And I should see "stuffs for F"
+       And I should see "goals for F"
+       And I should see "11/06/2013"
+ 
+Scenario: Press back button
+       When I follow "Project F"
+       Then I should be on the "Project F" page
+       When I press "<< Back"
+       Then I should be on the projects page
+

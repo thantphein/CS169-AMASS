@@ -33,25 +33,25 @@
 
     %div.col-md-4.info-block
       %h3
-        = @project.name
+        = @project.organization
       %h4
         = @project.nonprofit_mission
 
       
-    %div.col-md-8.info-block#bottom-block
-      %h2#blurb
-        = @project.blurb
-      %h3
-        %b
-          Deadline
-      %h4
-        = @project.deadline
-      %h3
-        %b
-          Description
-      %h4
-        = @project.description
+  %div.col-md-12.info-block#bottom-block
+    %h2#blurb
+      = @project.blurb
+    %h3
+      %b
+        Deadline
+    %h4
+      = @project.deadline.strftime('%m/%d/%Y')
+    %h3
+      %b
+        Description
+    %h4
+      = @project.description
   
 
-  = link_to raw("<i class=\"glyphicon-arrow-left\">Back</i>"), projects_path, :class => "btn btn-primary btn-md", :id => "back-button", :method => 'get'
+  = button_to "<< Back", projects_path, :class => "btn btn-primary btn-md", :method => 'get', :id => "back-button"
     
