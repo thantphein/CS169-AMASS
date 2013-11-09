@@ -69,4 +69,25 @@ Feature: Filter Projects
       Then I should not see "Project E"
       Then I should not see "Project F"
 
+    Scenario: Filter Projects by popular (click > 2) not set yet
+      When I follow "Popular"
+      Then I should not see "Project A"
+      Then I should not see "Project B"
+      Then I should not see "Project C"
+      Then I should not see "Project D"
+      Then I should not see "Project E"
+      Then I should not see "Project F"
+
+    Scenario: Filter Projects by popular (click >= 1) set
+      Then I follow "Project A"
+      Then I should see "sample mission"
+      Then I press "back-button"
+      When I follow "Popular"
+      Then I should see "Project A"
+      Then I should not see "Project B"
+      Then I should not see "Project C"
+      Then I should not see "Project D"
+      Then I should not see "Project E"
+      Then I should not see "Project F"
+
 

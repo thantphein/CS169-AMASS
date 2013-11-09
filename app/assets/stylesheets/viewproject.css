@@ -1,0 +1,81 @@
+#project-div {
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+#name {
+  margin-bottom:0;
+  padding-top: 1%;
+  text-align: center;
+}
+
+#organization {
+  text-align: center;
+  margin-bottom: 1%;
+  margin-top:0.5%;
+}
+
+#organization a:link, #organization a:visited, #organization a:active {
+  color:black;
+  text-decoration:none;
+}
+
+#organization a:hover {
+  color:#4F9FD0;
+}
+
+#image-div {
+  repeat:none;
+  margin-bottom:0;
+  margin-left:-1%;
+  margin-right:1%;
+
+}
+
+#ourimage {
+  width:100%;
+  border-radius: 10px;
+}
+.info-block {
+  background-color:#eff7ff;
+  border-radius:10px;
+  padding-bottom: 3%;
+  padding-top: 1.5%;
+}
+
+.info-detail {
+  margin-top:0;
+  margin-bottom:8%;
+}
+
+.info-title{
+  margin-bottom:0;
+  margin-left:0;
+}
+
+#join {
+  margin:0;
+  text-align:center;
+  margin-top:5%;
+}
+
+#pic-n-info {
+  padding-top:3.5%;
+  margin-bottom:3%;
+  padding-left:0;
+}
+
+#top-block {
+  margin-bottom:2%;
+}
+
+#blurb {
+  margin-bottom:5%;
+}
+
+#back-button {
+  margin-bottom: 3.5%;
+  margin-top:2%;
+ 
+}

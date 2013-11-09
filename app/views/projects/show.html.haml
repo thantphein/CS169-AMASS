@@ -1,35 +1,56 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1#name
   = @project.name
-%p
-  %b Category:
-  = @project.category
-%p
-  %b Location:
-  = @project.location
-%p
-  %b Organization:
-  = @project.organization
-%p
-  %b Blurb:
-  = @project.blurb
-%p
-  %b Nonprofit mission:
-  = @project.nonprofit_mission
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Deadline:
-  = @project.deadline
-%p
-  %b Status:
-  = @project.status
-%p
-  %b Budget:
-  = @project.created_at
 
-\|
-= link_to 'Back', projects_path
+%h3#organization
+  = link_to @project.organization, project_path(@project.id)
+
+%div.col-md-8.col-md-offset-2#project-div
+
+  %div.row#pic-n-info
+    %div.col-md-8#image-div
+      =image_tag "lorem-ipsum.jpg", :id => "ourimage"
+    %div.col-md-4.info-block#top-block
+      %h5.info-title
+        Category
+      %h2.info-detail
+        = @project.category
+      %h5.info-title
+        Location
+      %h2.info-detail
+        = @project.location
+      %h5.info-title
+        Status
+      %h2.info-detail
+        = @project.status
+      %h5.info-title
+        Budget
+      %h2.info-detail
+        = "$ #{@project.budget}"
+      %div#join
+        = button_to "Join This Project", project_path(@project.id), :class => "btn btn-primary btn-lg", :method => 'get'
+
+    %div.col-md-4.info-block
+      %h3
+        = @project.organization
+      %h4
+        = @project.nonprofit_mission
+
+      
+  %div.col-md-12.info-block#bottom-block
+    %h2#blurb
+      = @project.blurb
+    %h3
+      %b
+        Deadline
+    %h4
+      = @project.deadline.strftime('%m/%d/%Y')
+    %h3
+      %b
+        Description
+    %h4
+      = @project.description
+  
+
+  = button_to "<< Back", projects_path, :class => "btn btn-primary btn-md", :method => 'get', :id => "back-button"

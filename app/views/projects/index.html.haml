@@ -16,6 +16,8 @@
     %h4{align: "left"}= link_to 'San Mateo', projects_path(:filter=>'Region', :by => 'San Mateo')
     %h4{align: "left"}= link_to 'Santa Clara', projects_path(:filter=>'Region', :by => 'Santa Clara')
 
+    %h3{align: "left"}= link_to 'Popular', projects_path(:filter=>'Popular')
+
     %h3{align: "left"}= link_to 'New Posts', projects_path(:filter=>'New Posts')
 
     %h3{align: "left"}Budget
@@ -41,4 +43,3 @@
             %p= "Budget: $#{project.budget}"
 
 %br
-
