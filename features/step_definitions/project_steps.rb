@@ -6,5 +6,12 @@ Given /the following projects exist/ do |projects_table|
     # you should arrange to add that project to the database here.
     Project.create(proj)
   end
+  @projects = Project.all
+  i = 0
+  days = 24 * 60 * 60
+  @projects = @projects.each{|x| 
+              x.created_at = x.created_at - (i * days)
+              i+=2
+              x.save!}
   # flunk "Implemented"
 end

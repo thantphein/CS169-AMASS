@@ -20,9 +20,9 @@ Feature: Filter Projects
   Then I should see "Community"
   Then I should see "Education"
   Then I should see "Housing"
-  Then I should see "Specialties"
+  Then I should see "Type"
   Then I should see "Region"
-  Then I should see "Deadline"
+  Then I should see "New Posts"
   Then I should see "Budget"
 
     Scenario: Before Filter
@@ -51,6 +51,15 @@ Feature: Filter Projects
       Then I should not see "Project E"
       Then I should see "Project F"
 
+    Scenario: Filter Projects by New Posts
+      When I follow "New Posts"
+      Then I should see "Project A"
+      Then I should see "Project B"
+      Then I should see "Project C"
+      Then I should see "Project D"
+      Then I should not see "Project E"
+      Then I should not see "Project F"
+
     Scenario: Filter Projects by Budget showing Projects with budgets >= specified $
       When I follow "$$"
       Then I should not see "Project A"
@@ -60,20 +69,4 @@ Feature: Filter Projects
       Then I should not see "Project E"
       Then I should not see "Project F"
 
-    Scenario: Filter Projects by Deadline showing Projects due after the specified date
-      When I follow "31-Dec-2014"
-      Then I should not see "Project A"
-      Then I should see "Project B"
-      Then I should not see "Project C"
-      Then I should not see "Project D"
-      Then I should not see "Project E"
-      Then I should not see "Project F"
 
-    Scenario: Filter Projects by Deadline showing Projects due after the specified date
-      When I follow "28-Feb-2014"
-      Then I should not see "Project A"
-      Then I should see "Project B"
-      Then I should not see "Project C"
-      Then I should see "Project D"
-      Then I should see "Project E"
-      Then I should see "Project F"

@@ -13,6 +13,15 @@ projects = [{:name => 'Project A', :location => 'Alameda', :category => 'educati
       {:name => 'Project E', :location => 'San Francisco', :category => 'education', :organization => 'org E', :blurb => 'blurb E', :nonprofit_mission => 'goals for E', :description => 'stuffs for E', :deadline => '28-Feb-2014', :status => 'pending', :budget => '100'},
       {:name => 'Project F', :location => 'Alameda',:category => 'housing', :organization => 'org F', :blurb => 'blurb F', :nonprofit_mission => 'goals for F', :description => 'stuffs for F', :deadline => '30-Apr-2014', :status => 'pending', :budget => '999'}]
 
+
 projects.each do |proj|
   Project.create!(proj)
 end
+
+projects = Project.all
+i = 0
+days = 24 * 60 * 60
+projects = projects.each{|x| 
+              x.created_at = x.created_at - (i * days)
+              i = i + 2
+              x.save!}

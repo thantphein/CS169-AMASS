@@ -9,15 +9,15 @@ class ProjectsController < ApplicationController
     case filter
     when 'all'
       @projects = Project.all
-    when 'specialities'
+    when 'Type'
       @projects = Project.select{|x| x.category.to_s.downcase == by.downcase}
-    when 'region'
+    when 'Region'
       @projects = Project.select{|x| x.location.to_s.downcase == by.downcase}
-    when 'budget'
+    when 'Budget'
       @projects = Project.select{|x| x.budget.to_i.to_s.length == by.length}
-    when 'deadline'
-      tempDate = Date.parse(by)
-      @projects = Project.select{|x| x.deadline >= tempDate}
+    when 'New Posts'
+      days = 24 * 60 * 60 * 7
+      @projects = Project.select{|x| x.created_at + days >= Time.now}
     end
 
     respond_to do |format|
