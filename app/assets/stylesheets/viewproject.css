@@ -1,6 +1,7 @@
 #project-div {
   background-color: white;
-  border-radius: 15px;
+  border-radius: 10px;
+
 }
 
 #name {
@@ -25,25 +26,43 @@
 }
 
 #image-div {
-  margin-top: 3.5%;
   repeat:none;
   margin-bottom:0;
+
 }
 
 #ourimage {
   width:100%;
   border-radius: 10px;
 }
-#info-block {
-  margin-top:3.5%;
+.info-block {
   background-color:#f7f7f9;
   border-radius:10px;
+  padding-bottom: 3%;
+  padding-top: 1.5%;
 }
 
-#h3 {
+.info-detail {
   margin-top:0;
+  margin-bottom:8%;
+}
+
+.info-title{
+margin-bottom:0;
+margin-left:0;
 }
 
 #join {
+  margin:0;
+  text-align:center;
+  margin-top:5%;
+}
 
+#pic-n-info {
+  padding-top:3.5%;
+  margin-bottom:3%;
+}
+
+#top-block {
+  margin-bottom:2%;
 }
