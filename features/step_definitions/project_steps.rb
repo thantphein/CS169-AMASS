@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-Given /^the following projects exist/ do |table|
-	table.hashes.each do |proj|
-		Project.create!(proj)
-    end
-=======
 # Add a declarative step here for populating the DB with movies.
 
 Given /the following projects exist/ do |projects_table|
@@ -20,6 +14,5 @@ Given /the following projects exist/ do |projects_table|
               i+=2
               x.save!}
   # flunk "Implemented"
->>>>>>> origin/FilterProjects
 end
 
