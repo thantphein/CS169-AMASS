@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131109073538) do
+ActiveRecord::Schema.define(:version => 20131110093426) do
+
+  create_table "filmmakers", :force => true do |t|
+    t.text     "about"
+    t.text     "summary"
+    t.text     "experience"
+    t.text     "skills"
+    t.text     "contact"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -37,6 +47,11 @@ ActiveRecord::Schema.define(:version => 20131109073538) do
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], :name => "poly_session_index"
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], :name => "impressionable_type_message_index"
   add_index "impressions", ["user_id"], :name => "index_impressions_on_user_id"
+
+  create_table "nonprofits", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -69,6 +84,8 @@ ActiveRecord::Schema.define(:version => 20131109073538) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "profilable_id"
+    t.string   "profilable_type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
