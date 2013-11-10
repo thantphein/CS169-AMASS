@@ -1,20 +1,29 @@
-%p#notice= notice
-
+%h1 User Profile
 %p
   %b Name:
   = @filmmaker.user.name
 %p
-  %b Email: 
+  %b Email:
   = @filmmaker.user.email
 %p
-  %b Type:
-  = @filmmaker.user.profilable_type
+  %b Filmmaker Summary:
+  = @filmmaker.summary
 %p
-  %b Profilable ID:
-  = @filmmaker.user.profilable_id
+  %b About me:
+  = @filmmaker.about
 %p
-  %b User ID:
-  = @filmmaker.user.id
+  %b Experience Summary:
+  = @filmmaker.experience
 %p
-  %b Username:
-  = @filmmaker.user.username
+  %b Skills and Expertise:
+  = @filmmaker.skills
+%p
+  %b Links to Work Samples:
+%p
+  %b Contact Information:
+  = @filmmaker.contact
+%p
+  %b Contact Form:
+%p
+  %b Client Testimonials:
+= link_to 'Edit Profile', edit_filmmaker_path(@filmmaker)

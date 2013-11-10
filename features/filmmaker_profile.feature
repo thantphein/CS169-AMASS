@@ -18,7 +18,6 @@ Feature: Profile page for filmmakers
         And I follow "Profile"
         Then I should be on the profile page of "abc123"
         And I should see "Jackie"
-        And I should see "Edit"
         And I should see "Filmmaker Summary"
         And I should see "About me"
         And I should see "Experience Summary"
