@@ -8,6 +8,7 @@ CS169Amass::Application.routes.draw do
     post 'users/signup', :to => "devise/registrations#create" 
   end
   resources :projects #, only: [:show,:index,:create]
+
   resources :users
 
   # The priority is based upon order of creation:

@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.14'
 gem 'rails_12factor'
 gem 'devise'
-
+gem 'impressionist'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

@@ -1,8 +1,27 @@
 class ProjectsController < ApplicationController
+  impressionist actions: [:show]
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    
+    filter = params[:filter]
+    by = params[:by]
+    case filter
+    when 'all'
+      @projects = Project.all
+    when 'Type'
+      @projects = Project.select{|x| x.category.to_s.downcase == by.downcase}
+    when 'Region'
+      @projects = Project.select{|x| x.location.to_s.downcase == by.downcase}
+    when 'Budget'
+      @projects = Project.select{|x| x.budget.to_i.to_s.length == by.length}
+    when 'Popular'
+      @projects = Project.select{|x| x.impressionist_count >= 1}
+    when 'New Posts'
+      days = 24 * 60 * 60 * 7
+      @projects = Project.select{|x| x.created_at + days >= Time.now}
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,11 +29,12 @@ class ProjectsController < ApplicationController
     end
   end
 
+
   # GET /projects/1
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-
+    @project.impressionist_count(:filter=>:session_hash)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
