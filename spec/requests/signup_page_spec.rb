@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Signing Up" do
   subject { page }
-  before { visit signup_path }
+  before { visit new_user_registration_path }
   describe "signup page" do
 	it { should have_content('Username') }
 	it { should have_content('Name') }
@@ -10,7 +10,6 @@ describe "Signing Up" do
 	it { should have_content('Password') }
     it { should have_content('Password Confirmation') }
     it { should have_content('Are You a Filmmaker or Nonprofit') }     
-	it { should have_link 'Sign Up' }
   end
 
   describe "with invalid information" do
@@ -18,10 +17,10 @@ describe "Signing Up" do
 		before do
 			fill_in "Username", with: "mockUser"
 			fill_in "Email", with: "mock@gmai.com"
-			fill_in "Password", with: "xyz123"
-			fill_in "Password Confirmation", with: "xyz123"
+			fill_in "Password", with: "xyz123456"
+			fill_in "Password Confirmation", with: "xyz123456"
 			check "Filmmaker"
-			click_button "Sign Up"
+			click_button "Create an account"
 		end
 		it { should have_content('Name is required') }
 		it { should_not have_content('Email is required') }
@@ -36,10 +35,10 @@ describe "Signing Up" do
 		before do
 			fill_in "Name", with: "mock"
 			fill_in "Username", with: "mockUser"
-			fill_in "Password", with: "xyz123"
-			fill_in "Password Confirmation", with: "xyz123"
+			fill_in "Password", with: "xyz123456"
+			fill_in "Password Confirmation", with: "xyz123456"
 			check "Filmmaker"
-			click_button "Sign Up"
+			click_button "Create an account"
 		end
 		it { should_not have_content('Name is required') }
 		it { should have_content('Email is required') }
@@ -58,10 +57,10 @@ describe "Signing Up" do
 		fill_in "Name", with: "mock"
 		fill_in "Username", with: "mockUser"
 		fill_in "Email", with: "mock@gmail.com"
-		fill_in "Password", with: "xyz123"
-		fill_in "Password Confirmation", with: "xyz123"
+		fill_in "Password", with: "xyz123456"
+		fill_in "Password Confirmation", with: "xyz123456"
 		check "Filmmaker"
-		click_button "Sign Up"
+		click_button "Create an account"
 	end
 
 	it { should have_content 'Welcome, mock' }

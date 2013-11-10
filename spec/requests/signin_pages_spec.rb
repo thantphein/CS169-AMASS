@@ -3,15 +3,15 @@ require 'spec_helper'
 describe "Signing in" do
   subject { page }
   before { 
-	visit signin_path 
+	visit new_user_session_path 
   }
   describe "signin page" do
-	it { should have_content('Login') }
-	it { should have_content('Remember Me') }
+	it { should have_content('Sign In') }
+	it { should have_content('Remember me') }
 	it { should have_content('New user?') }
 	it { should have_content('Sign up now!') }
-    it { should have_css('input#session_username') }
-    it { should have_css('input#session_password') }
+    it { should have_css('input#username') }
+    it { should have_css('input#password') }
   end
 
   describe "sign up if not have account" do
@@ -22,13 +22,13 @@ describe "Signing in" do
 
   describe "with invalid information" do
 	describe "not enter username and password" do
-    	before { click_button "Login" }
-		it { should have_content('Login') }
-		it { should have_content('Remember Me') }
+    	before { click_button "Sign In" }
+		it { should have_content('Sign In') }
+		it { should have_content('Remember me') }
 		it { should have_content('New user?') }
 		it { should have_content('Sign up now!') }
-   		it { should have_css('input#session_username') }
-    	it { should have_css('input#session_password') }
+   		it { should have_css('input#username') }
+    	it { should have_css('input#password') }
 		it { should have_content('Invalid username/password combination') }
 	end
 	
@@ -36,14 +36,14 @@ describe "Signing in" do
 		before do
 			fill_in "Username", with: "XYZ"
 			fill_in "Password", with: "xyz123"
-			click_button "Login"
+			click_button "Sign In"
 		end
-		it { should have_content('Login') }
-		it { should have_content('Remember Me') }
+		it { should have_content('Sign In') }
+		it { should have_content('Remember me') }
 		it { should have_content('New user?') }
 		it { should have_content('Sign up now!') }
-    	it { should have_css('input#session_username') }
-    	it { should have_css('input#session_password') }
+    	it { should have_css('input#username') }
+    	it { should have_css('input#password') }
 		it { should have_content('Invalid username/password combination') }
 	end
 
@@ -52,14 +52,14 @@ describe "Signing in" do
 		before do
 			fill_in "Username", with: user.username
 			fill_in "Password", with: "xyz123"
-			click_button "Login"
+			click_button "Sign In"
 		end
-		it { should have_content('Login') }
-		it { should have_content('Remember Me') }
+		it { should have_content('Sign In') }
+		it { should have_content('Remember me') }
 		it { should have_content('New user?') }
 		it { should have_content('Sign up now!') }
-    	it { should have_css('input#session_username') }
-	    it { should have_css('input#session_password') }
+    	it { should have_css('input#username') }
+	    it { should have_css('input#password') }
 		it { should have_content('Invalid username/password combination') }
 	end
   end
@@ -69,13 +69,13 @@ describe "Signing in" do
 	before do 
 		fill_in "Username", with: user.username
 		fill_in "Password", with: user.password
-		click_button "Login"
+		click_button "Sign In"
 	end
-	it { should_not have_link('Login') }
+	it { should_not have_link('Sign In') }
 	it { should_not have_link('Sign up') }
 	it { should have_content('Welcome, Jane Doe') }
-	it { should_not have_css('input#session_username') }
-	it { should_not have_css('input#session_password') }
+	it { should_not have_css('input#username') }
+	it { should_not have_css('input#password') }
 	it { should have_link 'Profile' }
 	it { should have_link 'Settings' }
 	it { should have_link 'Logout' }
