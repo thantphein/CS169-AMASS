@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/saasbook/CS169-AMASS/app/models/user.rb": [
+      "/home/akhoa/CS169-AMASS/app/models/user.rb": [
         1,
         null,
         null,
@@ -15,72 +15,114 @@
         null,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        14,
+        null,
+        null,
+        1,
+        10,
         null,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/controllers/application_controller.rb": [
+      "/home/akhoa/CS169-AMASS/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/helpers/application_helper.rb": [
+      "/home/akhoa/CS169-AMASS/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/helpers/projects_helper.rb": [
+      "/home/akhoa/CS169-AMASS/app/helpers/projects_helper.rb": [
         1,
         1,
-        144,
+        0,
         null,
         null,
         null,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/helpers/welcome_helper.rb": [
+      "/home/akhoa/CS169-AMASS/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/controllers/projects_controller.rb": [
+      "/home/akhoa/CS169-AMASS/app/controllers/filmmakers_controller.rb": [
+        1,
+        1,
+        4,
+        4,
+        4,
+        4,
+        null,
+        null,
+        null
+      ],
+      "/home/akhoa/CS169-AMASS/app/models/filmmaker.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/akhoa/CS169-AMASS/app/controllers/nonprofits_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/akhoa/CS169-AMASS/app/models/nonprofit.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/akhoa/CS169-AMASS/app/controllers/projects_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        31,
+        0,
         null,
-        31,
-        31,
-        31,
+        0,
+        0,
+        0,
         null,
         0,
         null,
-        7,
+        0,
         null,
-        7,
+        0,
         null,
-        7,
+        0,
         null,
-        14,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
-        7,
-        null,
-        null,
-        31,
-        31,
-        31,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        6,
-        6,
-        6,
-        6,
-        6,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -146,20 +188,36 @@
         null,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/models/project.rb": [
+      "/home/akhoa/CS169-AMASS/app/models/project.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/saasbook/CS169-AMASS/app/controllers/welcome_controller.rb": [
+      "/home/akhoa/CS169-AMASS/app/controllers/users/registrations_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/home/akhoa/CS169-AMASS/app/controllers/welcome_controller.rb": [
         1,
         1,
         null,
         null
       ]
     },
-    "timestamp": 1384057041
+    "timestamp": 1384081766
   },
   "RSpec": {
     "coverage": {

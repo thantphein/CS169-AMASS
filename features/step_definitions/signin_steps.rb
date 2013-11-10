@@ -1,12 +1,16 @@
 Given /^the following filmmakers exist/ do |table|
 	table.hashes.each do |user|
-		User.create!(user)
+		new_user = User.create!(user)
+		new_user.profilable = Filmmaker.create!
+		new_user.save!
     end
 end
 
 Given /^the following non-profits exist/ do |table|
 	table.hashes.each do |user|
-		User.create!(user)
+		new_user = User.create!(user)
+		new_user.profilable = Nonprofit.create!
+		new_user.save!
     end
 end
 

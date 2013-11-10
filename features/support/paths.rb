@@ -25,6 +25,16 @@ module NavigationHelpers
 	when /^the sign in page$/
 	'/users/login' 
 
+    when /^the profile page of "(.*)"$/ 
+		user = User.find_by_username($1)
+		id = user.profilable_id
+		if user.filmmaker?
+			'/filmmakers/' + id.to_s
+        elsif user.nonprofit?
+			'/nonprofits/' + id.to_s
+		end
+	  
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
