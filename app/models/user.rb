@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :username, :usertype
   validates_uniqueness_of :username, :email, :case_sensitive => false
 
-  belongs_to :profilable, :polymorphic => true
+  belongs_to :profilable, :polymorphic => true, :dependent => :destroy
   
   def filmmaker?
      usertype == 'filmmaker'? true : false
