@@ -14,7 +14,7 @@
 
 
 #blah {
-  background-color:#eff7ff;
+  background-color:#f7f7f9;
 }
 
 #logo a {
@@ -54,6 +54,7 @@
   position:relative;
   display:inline-block;
   margin-top:7%;
+  background-color: #1abc9c;
 
 }
 
@@ -114,14 +115,14 @@
 
 #feat {
   padding-left:7%;
-  color: #8aba00;
+  color: #1abc9c;
   font-weight:bold;
   font-size:300%;
   padding-top:1%;
   padding-bottom:1%;
 }
 
-#project-div {
+#index-project-div {
   padding-left:3%;
   padding-right:3%;
   margin-bottom:5%;
@@ -131,7 +132,10 @@
 #Learn {
   margin-top: 75px;
   position: absolute;
+}
 
+#learn-more {
+  background-color: #1abc9c;
 }
 
 
