@@ -32,8 +32,7 @@
                 %li
                   %a.drop-items{href: "#", role: "menuitem", tabindex: "-1"}     Settings
                 %li.divider{role: "presentation"}
-                %li{role: "presentation"}
-                  %a.drop-items{role: "menuitem", tabindex: "-1"}= link_to 'Logout', destroy_user_session_path, :method => 'delete'
+                %li.drop-items{role: "menuitem", tabindex: "-1"}= link_to 'Logout', destroy_user_session_path, :method => 'delete'
           - else
             %div.btn#login= link_to 'Login', new_user_session_path,:method =>:get
             %div.btn#login= link_to 'Sign Up', new_user_registration_path, :method =>:get

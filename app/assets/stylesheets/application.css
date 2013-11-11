@@ -50,6 +50,19 @@
   color: #666666 !important;
 }
 
+.drop-items a:visited{
+  color: #666666 !important;
+}
+.drop-items a:hover{
+  color: #666666 !important;
+}
+.drop-items a:link{
+  color: #666666 !important;
+}
+.drop-items a:active{
+  color: #666666 !important;
+}
+
 #login {
   position:relative;
   display:inline-block;
@@ -137,5 +150,6 @@
 #learn-more {
   background-color: #1abc9c;
 }
+
 
 
