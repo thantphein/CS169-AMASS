@@ -28,7 +28,7 @@ Scenario: sign up using sign up page
   And I check "Nonprofit"
   When I press "Create an account"
   Then I should be on the home page
-  Then I should see "Welcome, Jane Doe"
+  Then I should see "Hi Jane Doe"
 
 Scenario: sign up failure
   Given I am on the sign up page

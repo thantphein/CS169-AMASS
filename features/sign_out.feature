@@ -15,14 +15,14 @@ Feature: sign out
         
   Scenario: after logging in, users should have an option to logout 
         Given I am logged in as "abc123" with password "rst45678"
-        Then I should see "Welcome, Jackie"
+        Then I should see "Hi Jackie"
         And I should see "Logout"
         
   Scenario: sign out with filmmaker account
         Given I am logged in as "abc123" with password "rst45678"
         When I follow "Logout"
         Then I should be on the home page
-        And I should not see "Welcome, Jackie"
+        And I should not see "Hi Jackie"
         And I should see "Login"
         And I should see "Sign Up"
         
@@ -30,6 +30,6 @@ Feature: sign out
         Given I am logged in as "org1" with password "12345678"
         When I follow "Logout"
         Then I should be on the home page
-        And I should not see "Welcome, Organization1"
+        And I should not see "Hi Organization1"
         And I should see "Login"
         And I should see "Sign Up"

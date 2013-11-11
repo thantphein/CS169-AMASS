@@ -22,7 +22,7 @@ Scenario: view sign in form
 Scenario: sign in with a username
 	Given I am logged in as "abc123" with password "rst456789"
 	Then I should be on the home page
-	And I should see "Welcome, Jackie"
+	And I should see "Hi Jackie"
 
 Scenario: sign in with wrong password
 	Given I am logged in as "abc123" with password "r456"

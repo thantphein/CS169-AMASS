@@ -63,11 +63,3 @@ Feature: Profile page for filmmakers
         And I should see "skills" 
         And I should see "info"
 
-	Scenario: Filmmakers did not make any changes
-		Given I am logged in as "abc123" with password "rst45678"
-		And I am on the edit page of "abc123"
-		When I press "Update Filmmaker Info"
-		Then I should be on the profile page of "abc123"
-		And I should not see "Your profile was successfully udpated"
-
-
