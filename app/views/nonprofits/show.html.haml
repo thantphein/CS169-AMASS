@@ -1,20 +1,16 @@
-%p#notice= notice
-
+%h1 User Profile
 %p
   %b Name:
   = @nonprofit.user.name
 %p
-  %b Email: 
-  = @nonprofit.user.email
+  %b Non-profit Summary:
 %p
-  %b Type:
-  = @nonprofit.user.profilable_type
+  %b About:
 %p
-  %b Profilable ID:
-  = @nonprofit.user.profilable_id
+  %b Listing Projects:
 %p
-  %b User ID:
-  = @nonprofit.user.id
+  %b Contact Information:
 %p
-  %b Username:
-  = @nonprofit.user.username
+  %b Contact Form:
+-if current_user.id == @nonprofit.user.id
+  = link_to 'Edit', edit_nonprofit_path(@nonprofit)

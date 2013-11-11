@@ -9,7 +9,7 @@
   %b Filmmaker Summary:
   = @filmmaker.summary
 %p
-  %b About me:
+  %b About Me:
   = @filmmaker.about
 %p
   %b Experience Summary:
@@ -26,4 +26,5 @@
   %b Contact Form:
 %p
   %b Client Testimonials:
-= link_to 'Edit Profile', edit_filmmaker_path(@filmmaker)
+-if current_user.id == @filmmaker.user.id
+  = link_to 'Edit', edit_filmmaker_path(@filmmaker)

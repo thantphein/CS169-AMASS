@@ -33,6 +33,15 @@ module NavigationHelpers
         elsif user.nonprofit?
 			'/nonprofits/' + id.to_s
 		end
+
+	when /^the edit page of "(.*)"$/ 
+		user = User.find_by_username($1)
+		id = user.profilable_id
+		if user.filmmaker?
+			'/filmmakers/' + id.to_s + '/edit'
+        elsif user.nonprofit?
+			'/nonprofits/' + id.to_s + '/edit'
+		end
 	  
 
     # Add more mappings here.
