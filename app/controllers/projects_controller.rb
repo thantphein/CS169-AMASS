@@ -7,6 +7,16 @@ class ProjectsController < ApplicationController
     
     filter = params[:filter]
     by = params[:by]
+  
+    @projects = filter_projects(filter,by)
+   
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @projects }
+    end
+  end
+  
+  def filter_projects(filter, by)
     case filter
     when 'all'
       @projects = Project.all
@@ -22,13 +32,9 @@ class ProjectsController < ApplicationController
       days = 24 * 60 * 60 * 7
       @projects = Project.select{|x| x.created_at + days >= Time.now}
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @projects }
-    end
+   
+    return @projects
   end
-
 
   # GET /projects/1
   # GET /projects/1.json
