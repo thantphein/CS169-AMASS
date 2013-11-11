@@ -1,0 +1,20 @@
+%h1 Edit Existing Profile
+
+= form_tag filmmaker_path(@filmmaker), :method => :put do
+  = label :filmmaker, :summary, 'Filmmaker Summary' 
+  %div  
+    = text_area :filmmaker, 'summary', :size=>"60x10"
+  = label :filmmaker, :about, 'About Me'
+  %div
+    = text_area :filmmaker, 'about', :size=>"60x10"
+  = label :filmmaker, :experience, 'Experience Summary'
+  %div
+    = text_area :filmmaker, 'experience', :size=>"60x10"
+  = label :filmmaker, :skills, 'Skills and Expertise'
+  %div 
+    = text_area :filmmaker, 'skills', :size=>"60x10"
+  = label :filmmaker, :contact, 'Contact Information'
+  %div
+    = text_area :filmmaker, 'contact', :size=>"60x10"
+  %div
+    = submit_tag 'Update Filmmaker Info'

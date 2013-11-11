@@ -1,0 +1,30 @@
+%h1 User Profile
+%p
+  %b Name:
+  = @filmmaker.user.name
+%p
+  %b Email:
+  = @filmmaker.user.email
+%p
+  %b Filmmaker Summary:
+  = @filmmaker.summary
+%p
+  %b About Me:
+  = @filmmaker.about
+%p
+  %b Experience Summary:
+  = @filmmaker.experience
+%p
+  %b Skills and Expertise:
+  = @filmmaker.skills
+%p
+  %b Links to Work Samples:
+%p
+  %b Contact Information:
+  = @filmmaker.contact
+%p
+  %b Contact Form:
+%p
+  %b Client Testimonials:
+-if current_user.id == @filmmaker.user.id
+  = link_to 'Edit', edit_filmmaker_path(@filmmaker)

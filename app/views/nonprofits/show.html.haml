@@ -1,0 +1,16 @@
+%h1 User Profile
+%p
+  %b Name:
+  = @nonprofit.user.name
+%p
+  %b Non-profit Summary:
+%p
+  %b About:
+%p
+  %b Listing Projects:
+%p
+  %b Contact Information:
+%p
+  %b Contact Form:
+-if current_user.id == @nonprofit.user.id
+  = link_to 'Edit', edit_nonprofit_path(@nonprofit)

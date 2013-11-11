@@ -28,7 +28,11 @@
                 %b.caret
               %ul.dropdown-menu{"aria-labelledby" => "dLabel", role: "menu"}
                 %li{role: "presentation"}
-                  %a.drop-items{href: "#", role: "menuitem", tabindex: "-1"} Profile
+                  %a.drop-items{href: "#", role: "menuitem", tabindex: "-1"}
+                  - if current_user.filmmaker?
+                    = link_to "Profile", filmmaker_path(current_user.profilable.id)
+                  - if current_user.nonprofit?
+                    = link_to "Profile", nonprofit_path(current_user.profilable.id)
                 %li
                   %a.drop-items{href: "#", role: "menuitem", tabindex: "-1"}     Settings
                 %li.divider{role: "presentation"}
