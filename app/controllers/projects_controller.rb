@@ -7,8 +7,12 @@ class ProjectsController < ApplicationController
     
     filter = params[:filter]
     by = params[:by]
-  
-    @projects = filter_projects(filter,by)
+    
+    if filter == 'all' or filter == 'New Posts'
+      @projects = filter_projects(filter)
+    elsif filter == 'Type' or filter == 'Region' or filter == 'Budget' or filter == 'Popular'
+      @projects = filter_projects_by(filter, by)
+    end
    
     respond_to do |format|
       format.html # index.html.erb
@@ -16,24 +20,25 @@ class ProjectsController < ApplicationController
     end
   end
   
-  def filter_projects(filter, by)
-    case filter
-    when 'all'
-      @projects = Project.all
-    when 'Type'
-      @projects = Project.select{|x| x.category.to_s.downcase == by.downcase}
-    when 'Region'
-      @projects = Project.select{|x| x.location.to_s.downcase == by.downcase}
-    when 'Budget'
-      @projects = Project.select{|x| x.budget.to_i.to_s.length == by.length}
-    when 'Popular'
-      @projects = Project.select{|x| x.impressionist_count >= 1}
-    when 'New Posts'
-      days = 24 * 60 * 60 * 7
-      @projects = Project.select{|x| x.created_at + days >= Time.now}
+  def filter_projects(filter)
+    if filter == 'all'
+      return Project.all
+    else
+      return Project.select{|x| x.created_at + 604800 >= Time.now}
     end
-   
-    return @projects
+  end
+
+  def filter_projects_by(filter, by)
+    case filter
+    when 'Type'
+      return Project.select{|x| x.category.to_s.downcase == by.downcase}
+    when 'Region'
+      return Project.select{|x| x.location.to_s.downcase == by.downcase}
+    when 'Budget'
+      return Project.select{|x| x.budget.to_i.to_s.length == by.length}
+    when 'Popular'
+      return Project.select{|x| x.impressionist_count >= 1}
+    end
   end
 
   # GET /projects/1
